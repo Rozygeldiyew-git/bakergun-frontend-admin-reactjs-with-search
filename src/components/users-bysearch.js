@@ -1,9 +1,14 @@
 import React from "react";
 
 export const UsersBySearch = ({ searchUsername, users }) => {
-  // console.log("UserBySearch_response length:::", response.length);
-  // console.log("UserBySearch_searchUsername length:::", searchUsername.length);
-  // if (response.length === 0) return null;
+  console.log("\n", "user-bysearch.js_users length:::", users.length, "\n\n");
+  console.log(
+    "\n",
+    "user-bysearch.js_searchUsername length:::",
+    searchUsername.length,
+    "\n\n"
+  );
+  if (users.length === 0) return null;
 
   const UserRow = (user) => {
     return (
@@ -21,8 +26,8 @@ export const UsersBySearch = ({ searchUsername, users }) => {
 
   const userTable = users.map((user) => UserRow(user));
 
-  console.log("userTable: ", userTable);
-  console.log("UserRow - UserBySearch.js :", UserRow);
+  console.log("\n", "users-bysearch.js_userTable: \n\n", userTable, "\n\n");
+  console.log("\n", "users-bysearch.js_UserRow: \n\n", UserRow, "\n\n");
 
   return (
     <div className="row">

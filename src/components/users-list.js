@@ -32,7 +32,12 @@ export default class UsersList extends Component {
       searchUsername: searchUsername,
     });
 
-    console.log("users-list.js_onChangeSearchUsername: ", searchUsername);
+    console.log(
+      "\n",
+      "users-list.js_onChangeSearchUsername: ",
+      searchUsername,
+      "\n\n"
+    );
   }
 
   getUsers() {
@@ -41,7 +46,7 @@ export default class UsersList extends Component {
         this.setState({
           users: response.data,
         });
-        console.log("users-list.js_getUsers: ", response.data);
+        console.log("\n", "users-list.js_getUsers: ", response.data, "\n\n");
       })
       .catch((e) => {
         console.log(e);
@@ -62,7 +67,7 @@ export default class UsersList extends Component {
       nowIndex: index,
     });
 
-    console.log("users-list.js_setActiveUser: ", user, index);
+    console.log("\n", "users-list.js_setActiveUser: ", user, index);
   }
 
   searchUsername(e) {
@@ -71,7 +76,7 @@ export default class UsersList extends Component {
         this.setState({
           users: response.data,
         });
-        console.log("userlist.js_searchUsername: ", response);
+        console.log("\n", "userlist.js_searchUsername: ", response, "\n\n");
       })
       .catch((e) => {
         console.log(e);
@@ -84,11 +89,17 @@ export default class UsersList extends Component {
     const { users, searchUsername, nowUser, nowIndex } = this.state;
 
     console.log(
-      "user-list.js_render: ",
+      "\n",
+      "📺 user-list.js_render: \n",
+      " \n\n-users:",
       users,
+      " \n\n-searchUsername:",
       searchUsername,
+      " \n\n-nowUser:",
       nowUser,
-      nowIndex
+      " \n\n-nowIndex:",
+      nowIndex,
+      " \n\n"
     );
     return (
       <div className="container">
