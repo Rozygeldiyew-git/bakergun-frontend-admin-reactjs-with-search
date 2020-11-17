@@ -30,9 +30,8 @@ export const UsersBySearch = ({ searchUsername, users }) => {
   console.log("\n", "users-bysearch.js_UserRow: \n\n", UserRow, "\n\n");
 
   return (
-    <div className="row">
-      <div className="col-md-12"></div>
-      <h2>Result Search Users Game By Username</h2>
+    <div className="col-md-8 col-8 mt-4">
+      <h4>Users Game </h4>
       <table className="table table-bordered">
         <thead>
           <tr>

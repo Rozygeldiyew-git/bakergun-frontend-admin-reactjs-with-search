@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UsersDataServices from "../services/service-users";
 import { UsersBySearch } from "./users-bysearch";
+import { Header } from "./header";
 
 export default class UsersList extends Component {
   constructor(props) {
@@ -102,35 +103,40 @@ export default class UsersList extends Component {
       " \n\n"
     );
     return (
-      <div className="container">
-        <div className="list row">
-          <form className="col-md-8" onSubmit={this.searchUsername}>
-            <div className="input-group mb-3">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="type your search"
-                value={searchUsername}
-                onChange={this.onChangeSearchUsername}
-              />
-            </div>
-            <div className="input-group-append">
-              <button
-                className="btn btn-outline-secondary"
-                type="submit"
-                //   type="button"
-                //   onClick={this.searchUsername}
-              >
-                Search
-              </button>
-            </div>
-          </form>
+      <div className="dashboard">
+        <Header />
+        <div className="container">
+          <div className="row">
+            <form
+              className="form-inline col-md-5"
+              onSubmit={this.searchUsername}
+            >
+              <div className="input-group">
+                <input
+                  type="search"
+                  className="form-control ds-input p-2"
+                  placeholder="type your search.."
+                  value={searchUsername}
+                  onChange={this.onChangeSearchUsername}
+                />
+              </div>
+              <div className="input-group-append">
+                <button
+                  className="san-button-offset btn btn-success ml-4"
+                  type="submit"
+                  //   type="button"
+                  //   onClick={this.searchUsername}
+                >
+                  Search
+                </button>
+              </div>
+            </form>
 
-          <UsersBySearch
-            searchUsername={this.state.searchUsername}
-            users={this.state.users}
-          ></UsersBySearch>
-          {/* <div className="col-md-6">
+            <UsersBySearch
+              searchUsername={this.state.searchUsername}
+              users={this.state.users}
+            ></UsersBySearch>
+            {/* <div className="col-md-6">
           <h4>Users List</h4>
 
           <ul className="list-group">
@@ -148,7 +154,7 @@ export default class UsersList extends Component {
               })}
           </ul>
         </div> */}
-          {/* <div className="col-md-6">
+            {/* <div className="col-md-6">
           {nowUser ? (
             <div>
               <h4>User</h4>
@@ -175,6 +181,7 @@ export default class UsersList extends Component {
             ""
           )}
         </div> */}
+          </div>
         </div>
       </div>
     );
