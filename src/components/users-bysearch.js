@@ -35,7 +35,7 @@ export const UsersBySearch = ({ searchUsername, users }) => {
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th>User Id</th>
+            <th>Id</th>
             <th>Username</th>
             <th>Email</th>
             <th>Password</th>
