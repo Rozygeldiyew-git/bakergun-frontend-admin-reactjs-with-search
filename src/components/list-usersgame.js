@@ -11,6 +11,8 @@ export const ListUsersGame = ({ usersGame }) => {
   if (usersGame.length === 0) return null;
 
   const userGameRow = (usergame) => {
+    const [modalShow, setModalShow] = React.useState(false);
+
     return (
       <tr
         key={usergame.user_id}
@@ -20,6 +22,18 @@ export const ListUsersGame = ({ usersGame }) => {
         <td>{usergame.username}</td>
         <td>{usergame.email}</td>
         <td>{usergame.password}</td>
+        <td>
+          <button className="btn btn-success" type="button" title="edit">
+            ✒️
+          </button>
+          <button
+            className="btn btn-success mt-3"
+            type="button"
+            title="destroy or burn"
+          >
+            🔥️
+          </button>
+        </td>
       </tr>
     );
   };
@@ -44,6 +58,7 @@ export const ListUsersGame = ({ usersGame }) => {
             <th>Username</th>
             <th>Email</th>
             <th>Password</th>
+            <th>Edit</th>
           </tr>
         </thead>
         <tbody>{usersGameTable}</tbody>
