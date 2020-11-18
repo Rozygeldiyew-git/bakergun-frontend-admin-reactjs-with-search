@@ -92,9 +92,21 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(72, 255, 0, 0.25);
 }
 
-.btn-success:focus, .btn-success.focus {
+.btn-success:focus,
+.btn-success.focus {
   color: #fff;
   background-color: unset;
   border-color: #044b14;
   box-shadow: unset;
+}
+
+.card:after {
+  content: "";
+  min-width: 100%;
+  min-height: 100%;
+  background-color: #c6f7cf;
+  z-index: -2;
+  position: absolute;
+  top: 7px;
+  left: 7px;
 }

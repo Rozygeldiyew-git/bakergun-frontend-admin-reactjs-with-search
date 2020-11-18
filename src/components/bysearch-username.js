@@ -1,14 +1,19 @@
 import React from "react";
 
-export const UsersBySearch = ({ searchUsername, users }) => {
-  console.log("\n", "user-bysearch.js_users length:::", users.length, "\n\n");
+export const BySearchUsername = ({ searchUserGameTable, filteredUsername }) => {
+  console.log(
+    "\n",
+    "user-bysearch.js_filteredUsername length:::",
+    filteredUsername.length,
+    "\n\n"
+  );
   console.log(
     "\n",
     "user-bysearch.js_searchUsername length:::",
-    searchUsername.length,
+    searchUserGameTable.length,
     "\n\n"
   );
-  if (users.length === 0) return null;
+  if (filteredUsername.length === 0) return null;
 
   const UserRow = (user) => {
     return (
@@ -24,14 +29,14 @@ export const UsersBySearch = ({ searchUsername, users }) => {
     );
   };
 
-  const userTable = users.map((user) => UserRow(user));
+  const userTable = filteredUsername.map((user) => UserRow(user));
 
-  console.log("\n", "users-bysearch.js_userTable: \n\n", userTable, "\n\n");
-  console.log("\n", "users-bysearch.js_UserRow: \n\n", UserRow, "\n\n");
+  console.log("\n", "bysearch-username.js_userTable: \n\n", userTable, "\n\n");
+  console.log("\n", "bysearch-username.js_UserRow: \n\n", UserRow, "\n\n");
 
   return (
     <div className="col-md-8 col-8 mt-4">
-      <h4>Users Game </h4>
+      <h4>Users Game Filtered By Username </h4>
       <table className="table table-bordered">
         <thead>
           <tr>
