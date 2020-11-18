@@ -31,14 +31,22 @@ export default class UsersList extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.usersGame !== this.state.usersGame) {
-      console.log("TEST DID Update: ", true);
+    if (
+      prevState.numberOfUsersGameTable !== this.state.numberOfUsersGameTable
+    ) {
+      console.log(
+        "TEST DID Update: ",
+        true,
+        prevState.numberOfUsersGameTable,
+        this.state.numberOfUsersGameTable,
+        prevProps
+      );
 
-      // UsersDataServices.getAllUserGame(this.state.usersGame).then(
-      //   (response) => {
-      //     this.setState({ usersGame: });
-      //   }
-      // );
+      UsersDataServices.getAllUserGame(this.state.usersGame).then(
+        (response) => {
+          this.setState({ usersGame: response.data });
+        }
+      );
     } else {
       console.log("TEST DID Update: ", false);
     }
@@ -80,6 +88,13 @@ export default class UsersList extends Component {
       this.setState({
         numberOfUsersGameTable: this.state.numberOfUsersGameTable + 1,
       });
+      // start test line code - apakah prevState harus dideclare dulu disini??
+      this.setState((prevState) => {
+        return {
+          numberOfUsersGameTable: prevState.numberOfUsersGameTable,
+        };
+      });
+      // end test line code
       console.log("\n", "users-game.js_createUserGame: ", response, "\n\n");
     });
 
@@ -93,6 +108,15 @@ export default class UsersList extends Component {
           usersGame: response.data,
           numberOfUsersGameTable: response.data.length,
         });
+        //test line code start
+        // this.setState((prevState) => {
+        //   return {
+        //     usersGame: response.data,
+        //     numberOfUsersGameTable:
+        //       prevState.numberOfUsersGameTabler.data.length,
+        //   };
+        // });
+        //test line code end
         console.log("\n", "users-game.js_getUsersGame: ", response, "\n\n");
       })
       .catch((e) => {
