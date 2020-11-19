@@ -9,8 +9,8 @@ class UsersDataServices {
     return apiAdmin.get("/user-game");
   }
 
-  updateOneUserGame(userid) {
-    return apiAdmin.put(`/user-game/${userid}`);
+  updateOneUserGame(userid, userGame) {
+    return apiAdmin.put(`/user-game/${userid}`, userGame);
   }
 
   searchByUsername(username) {

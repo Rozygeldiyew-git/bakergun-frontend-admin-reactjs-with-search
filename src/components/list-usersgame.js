@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 // import MyVerticallyCenteredModal from "./modals";
 import { Button, Modal } from "react-bootstrap";
+import UsersDataServices from "../services/service-users";
 
 export const ListUsersGame = ({
+  userGame,
   usersGame,
-  createUserGame,
   onChangeFormUserGame,
 }) => {
   console.log(
@@ -17,12 +18,6 @@ export const ListUsersGame = ({
     "\n",
     "TEST LIST_USERS_GAME PARAMETERS 1 (usersGame)",
     usersGame,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_GAME PARAMETERS 2 (createUserGame)",
-    createUserGame,
     "\n\n"
   );
   console.log(
@@ -40,16 +35,34 @@ export const ListUsersGame = ({
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const updateUserGame = () => {
+      UsersDataServices.updateOneUserGame(usergame.user_id, userGame)
+        .then((response) => {
+          this.setState({
+            usersGame: response.data,
+          });
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    };
+
+    // console.log(
+    //   "\n",
+    //   "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 1 (usergame)",
+    //   usergame,
+    //   "\n\n"
+    // );
     console.log(
       "\n",
-      "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 1 (usergame)",
-      usergame,
+      "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 2 (usergame.user_id):",
+      usergame.user_id,
       "\n\n"
     );
     console.log(
       "\n",
-      "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 2 (createUserGame)",
-      createUserGame,
+      "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 2 (updateUserGame):",
+      updateUserGame,
       "\n\n"
     );
 
@@ -78,7 +91,7 @@ export const ListUsersGame = ({
             centered
             onHide={handleClose}
           >
-            <form onSubmit={createUserGame}>
+            <form onSubmit={updateUserGame}>
               {/* <form> */}
               <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
@@ -130,7 +143,7 @@ export const ListUsersGame = ({
                 </div>
               </Modal.Body>
               <Modal.Footer>
-                <button type="submit">Create</button>
+                <Button type="submit">Create</Button>
                 <Button onClick={handleClose}>Close</Button>
               </Modal.Footer>
             </form>
@@ -149,13 +162,13 @@ export const ListUsersGame = ({
 
   const usersGameTable = usersGame.map((usergame) => UserGameRow(usergame));
 
-  console.log(
-    "\n",
-    "list-usersgame.js_usersGameTable: \n\n",
-    usersGameTable,
-    "\n\n"
-  );
-  console.log("\n", "list-usersgame.js_userGameRow: \n\n", UserGameRow, "\n\n");
+  // console.log(
+  //   "\n",
+  //   "list-usersgame.js_usersGameTable: \n\n",
+  //   usersGameTable,
+  //   "\n\n"
+  // );
+  // console.log("\n", "list-usersgame.js_userGameRow: \n\n", UserGameRow, "\n\n");
 
   return (
     <div className="col-md-8 col-8 mt-4">
