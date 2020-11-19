@@ -9,7 +9,7 @@ class UsersDataServices {
     return apiAdmin.get("/user-game");
   }
 
-  updateUserGame(userid) {
+  updateOneUserGame(userid) {
     return apiAdmin.put(`/user-game/${userid}`);
   }
 

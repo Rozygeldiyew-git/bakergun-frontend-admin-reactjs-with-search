@@ -102,6 +102,16 @@ export default class UsersList extends Component {
     e.preventDefault();
   };
 
+  updateUserGame = (e) => {
+    UsersDataServices.updateOneUserGame(this.state.userGame).then(
+      (response) => {
+        this.setState({
+          usersGame: response.data,
+        });
+      }
+    );
+  };
+
   getUsersGame() {
     UsersDataServices.getAllUserGame()
       .then((response) => {
@@ -124,14 +134,6 @@ export default class UsersList extends Component {
         console.log(e);
       });
   }
-
-  //   refreshUserList() {
-  //     this.getUsers();
-  //     this.setState({
-  //       nowUser: null,
-  //       nowIndex: -1,
-  //     });
-  //   }
 
   setActiveUser(user, index) {
     this.setState({
