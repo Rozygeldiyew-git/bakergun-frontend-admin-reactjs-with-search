@@ -90,11 +90,11 @@ export default class UsersList extends Component {
         numberOfUsersGameTable: this.state.numberOfUsersGameTable + 1,
       });
       // start test line code - apakah prevState harus dideclare dulu disini??
-      this.setState((prevState) => {
-        return {
-          numberOfUsersGameTable: prevState.numberOfUsersGameTable,
-        };
-      });
+      // this.setState((prevState) => {
+      //   return {
+      //     numberOfUsersGameTable: prevState.numberOfUsersGameTable,
+      //   };
+      // });
       // end test line code
       console.log("\n", "users-game.js_createUserGame: ", response, "\n\n");
     });
