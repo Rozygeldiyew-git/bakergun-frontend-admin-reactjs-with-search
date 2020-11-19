@@ -1,27 +1,12 @@
 import React from "react";
 
-const CreateUserGame = ({ onChangeFormUserGame, createUserGame }) => {
-  //
-  //debugging
-  console.log(
-    "\n",
-    "TEST CREATE_USER_GAME PARAMETERS 1 (onChangeFormUserGame)",
-    onChangeFormUserGame,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST CREATE_USER_GAME PARAMETERS 2 (createUserGame)",
-    createUserGame,
-    "\n\n"
-  );
-
+const UpdateUserGame = ({ onChangeFormUserGame, createUserGame }) => {
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-7">
-          <h2>Create User</h2>
-          <form onSubmit={createUserGame}>
+          {/* <form onSubmit={createUserGame}> */}
+          <form>
             <div className="row">
               <div className="form-group col-md-12">
                 <label htmlFor="exampleInputUsername">Username</label>
@@ -79,4 +64,4 @@ const CreateUserGame = ({ onChangeFormUserGame, createUserGame }) => {
   );
 };
 
-export default CreateUserGame;
+export default UpdateUserGame;

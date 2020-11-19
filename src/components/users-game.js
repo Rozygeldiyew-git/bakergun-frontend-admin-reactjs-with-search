@@ -6,6 +6,7 @@ import { Header } from "./header";
 import { ListUsersGame } from "./list-usersgame";
 import CreateUserGame from "./create-user-game";
 import { MonitorUserGame } from "./monitor-usergame";
+import UserGameModals from "./modals";
 
 export default class UsersList extends Component {
   constructor(props) {
@@ -246,7 +247,15 @@ export default class UsersList extends Component {
                 </div>
               </form>
             </div>
-            <ListUsersGame usersGame={this.state.usersGame}></ListUsersGame>
+            <ListUsersGame
+              usersGame={this.state.usersGame}
+              onChangeFormUserGame={this.onChangeFormUserGame}
+              createUserGame={this.createUserGame}
+            ></ListUsersGame>
+            {/* <UserGameModals
+              onChangeFormUserGame={this.onChangeFormUserGame}
+              createUserGame={this.createUserGame}
+            ></UserGameModals> */}
             <BySearchUsername
               searchUserGameTable={this.state.searchUserGameTable}
               filteredUsername={this.state.filteredUsername}
