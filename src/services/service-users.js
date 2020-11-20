@@ -9,6 +9,9 @@ class UsersDataServices {
     return apiAdmin.get("/user-game");
   }
 
+  deleteOneUserGame(userid, userGame) {
+    return apiAdmin.delete(`/user-game/${userid}`, userGame);
+  }
   updateOneUserGame(userid, userGame) {
     return apiAdmin.put(`/user-game/${userid}`, userGame);
   }

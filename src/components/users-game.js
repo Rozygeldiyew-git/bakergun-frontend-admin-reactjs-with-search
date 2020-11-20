@@ -14,6 +14,8 @@ export default class UsersList extends Component {
 
     this.onChangeSearchUsername = this.onChangeSearchUsername.bind(this);
     this.searchUserGameTable = this.searchUserGameTable.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.handleShow = this.handleShow.bind(this);
 
     this.state = {
       userGame: {},
@@ -24,7 +26,20 @@ export default class UsersList extends Component {
       nowUser: null,
       nowIndex: -1,
       numberOfUsersGameTable: 0,
+      show: false,
     };
+  }
+
+  handleClose(e) {
+    this.setState({
+      show: false,
+    });
+  }
+
+  handleShow(e) {
+    this.setState({
+      show: true,
+    });
   }
 
   componentDidMount() {
@@ -84,7 +99,7 @@ export default class UsersList extends Component {
     console.log("\n", "users-game.js_onChangeFormUserGame: ", userGame, "\n\n");
   };
 
-  createUserGame = (e) => {
+  createUserGame = () => {
     UsersDataServices.createUserGame(this.state.userGame).then((response) => {
       this.setState({
         numberOfUsersGameTable: this.state.numberOfUsersGameTable + 1,
@@ -98,8 +113,6 @@ export default class UsersList extends Component {
       // end test line code
       console.log("\n", "users-game.js_createUserGame: ", response, "\n\n");
     });
-
-    e.preventDefault();
   };
 
   updateUserGame = (userid) => {
@@ -189,6 +202,8 @@ export default class UsersList extends Component {
       searchUserGameTable,
       nowUser,
       nowIndex,
+      show,
+      numberOfUsersGameTable,
     } = this.state;
 
     console.log(
@@ -208,6 +223,8 @@ export default class UsersList extends Component {
       nowUser,
       " \n\n-nowIndex:",
       nowIndex,
+      " \n\n-show:",
+      show,
       " \n\n"
     );
     return (
@@ -217,14 +234,14 @@ export default class UsersList extends Component {
           <div className="row">
             <div className="col-md-8 mb-4">
               <CreateUserGame
-                userGame={this.state.userGame}
+                userGame={userGame}
                 onChangeFormUserGame={this.onChangeFormUserGame}
                 createUserGame={this.createUserGame}
               ></CreateUserGame>
             </div>
             <div className="col-md-4">
               <MonitorUserGame
-                numberOfUsersGameTable={this.state.numberOfUsersGameTable}
+                numberOfUsersGameTable={numberOfUsersGameTable}
               ></MonitorUserGame>
               <form
                 className="form-inline mt-4"
@@ -252,8 +269,11 @@ export default class UsersList extends Component {
               </form>
             </div>
             <ListUsersGame
-              userGame={this.state.userGame}
-              usersGame={this.state.usersGame}
+              // show={show}
+              // handleClose={this.handleClose}
+              // handleShow={this.handleShow}
+              userGame={userGame}
+              usersGame={usersGame}
               onChangeFormUserGame={this.onChangeFormUserGame}
             ></ListUsersGame>
             {/* <UserGameModals
@@ -261,12 +281,12 @@ export default class UsersList extends Component {
               createUserGame={this.createUserGame}
             ></UserGameModals> */}
             <BySearchUsername
-              searchUserGameTable={this.state.searchUserGameTable}
-              filteredUsername={this.state.filteredUsername}
+              searchUserGameTable={searchUserGameTable}
+              filteredUsername={filteredUsername}
             ></BySearchUsername>
             <BySearchEmail
-              searchUserGameTable={this.state.searchUserGameTable}
-              filteredEmail={this.state.filteredEmail}
+              searchUserGameTable={searchUserGameTable}
+              filteredEmail={filteredEmail}
             ></BySearchEmail>
             {/* <div className="col-md-6">
           <h4>Users List</h4>

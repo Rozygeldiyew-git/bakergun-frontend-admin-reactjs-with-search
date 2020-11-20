@@ -7,6 +7,9 @@ export const ListUsersGame = ({
   userGame,
   usersGame,
   onChangeFormUserGame,
+  handleShow,
+  handleClose,
+  show,
 }) => {
   console.log(
     "\n",
@@ -30,6 +33,8 @@ export const ListUsersGame = ({
   if (usersGame.length === 0) return null;
 
   const UserGameRow = (usergame) => {
+    //
+    // aksi mancing
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -40,6 +45,18 @@ export const ListUsersGame = ({
         .then((response) => {
           this.setState({
             usersGame: response.data,
+          });
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    };
+
+    const deleteUserGame = () => {
+      UsersDataServices.deleteOneUserGame(usergame.user_id, userGame)
+        .then((response) => {
+          this.setState({
+            users: response.data,
           });
         })
         .catch((e) => {
@@ -84,70 +101,7 @@ export const ListUsersGame = ({
           >
             ✒️
           </button>
-          <Modal
-            show={show}
-            size="md"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-            onHide={handleClose}
-          >
-            <form onSubmit={updateUserGame}>
-              {/* <form> */}
-              <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
-                  Update User Game
-                </Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <div className="row">
-                  <div className="form-group col-md-12">
-                    <label htmlFor="exampleInputUsername">Username</label>
-                    <input
-                      type="text"
-                      onChange={(e) => onChangeFormUserGame(e)}
-                      className="form-control"
-                      name="username"
-                      id="username"
-                      aria-describedby="usernameHelp"
-                      placeholder="username"
-                    />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="form-group col-md-12">
-                    <label htmlFor="exampleInputEmail">Email</label>
-                    <input
-                      type="email"
-                      onChange={(e) => onChangeFormUserGame(e)}
-                      className="form-control"
-                      name="email"
-                      id="email"
-                      aria-describedby="emailHelp"
-                      placeholder="email@email.com"
-                    />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="form-group col-md-12">
-                    <label htmlFor="exampleInputPassword">Password</label>
-                    <input
-                      type="password"
-                      onChange={(e) => onChangeFormUserGame(e)}
-                      className="form-control"
-                      name="password"
-                      id="password"
-                      aria-describedby="passwordHelp"
-                      placeholder="********"
-                    />
-                  </div>
-                </div>
-              </Modal.Body>
-              <Modal.Footer>
-                <Button type="submit">Create</Button>
-                <Button onClick={handleClose}>Close</Button>
-              </Modal.Footer>
-            </form>
-          </Modal>
+
           <button
             className="btn btn-success mt-3"
             type="button"
@@ -156,6 +110,70 @@ export const ListUsersGame = ({
             🔥️
           </button>
         </td>
+        <Modal
+          show={show}
+          size="md"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+          onHide={handleClose}
+        >
+          <form onSubmit={updateUserGame}>
+            {/* <form> */}
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                Update User Game
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <div className="row">
+                <div className="form-group col-md-12">
+                  <label htmlFor="exampleInputUsername">Username</label>
+                  <input
+                    type="text"
+                    onChange={(e) => onChangeFormUserGame(e)}
+                    className="form-control"
+                    name="username"
+                    id="username"
+                    aria-describedby="usernameHelp"
+                    placeholder="username"
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="form-group col-md-12">
+                  <label htmlFor="exampleInputEmail">Email</label>
+                  <input
+                    type="email"
+                    onChange={(e) => onChangeFormUserGame(e)}
+                    className="form-control"
+                    name="email"
+                    id="email"
+                    aria-describedby="emailHelp"
+                    placeholder="email@email.com"
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="form-group col-md-12">
+                  <label htmlFor="exampleInputPassword">Password</label>
+                  <input
+                    type="password"
+                    onChange={(e) => onChangeFormUserGame(e)}
+                    className="form-control"
+                    name="password"
+                    id="password"
+                    aria-describedby="passwordHelp"
+                    placeholder="********"
+                  />
+                </div>
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button type="submit">Create</Button>
+              <Button onClick={handleClose}>Close</Button>
+            </Modal.Footer>
+          </form>
+        </Modal>
       </tr>
     );
   };
