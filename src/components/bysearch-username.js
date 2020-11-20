@@ -3,33 +3,33 @@ import React from "react";
 export const BySearchUsername = ({ searchUserGameTable, filteredUsername }) => {
   console.log(
     "\n",
-    "user-bysearch.js_filteredUsername length:::",
+    "bysearch-username.js_filteredUsername length:::",
     filteredUsername.length,
     "\n\n"
   );
   console.log(
     "\n",
-    "user-bysearch.js_searchUsername length:::",
+    "bysearch-username.js_searchUsername length:::",
     searchUserGameTable.length,
     "\n\n"
   );
   if (filteredUsername.length === 0) return null;
 
-  const UserRow = (user) => {
+  const UserRow = (usergame) => {
     return (
       <tr
-        key={user.user_id}
-        className={user.user_id % 2 === 0 ? "odd" : "even"}
+        key={usergame.user_id}
+        className={usergame.user_id % 2 === 0 ? "odd" : "even"}
       >
-        <td>{user.user_id}</td>
-        <td>{user.username}</td>
-        <td>{user.email}</td>
-        <td>{user.password}</td>
+        <td>{usergame.user_id}</td>
+        <td>{usergame.username}</td>
+        <td>{usergame.email}</td>
+        <td>{usergame.password}</td>
       </tr>
     );
   };
 
-  const userTable = filteredUsername.map((user) => UserRow(user));
+  const userTable = filteredUsername.map((usergame) => UserRow(usergame));
 
   console.log("\n", "bysearch-username.js_userTable: \n\n", userTable, "\n\n");
   console.log("\n", "bysearch-username.js_UserRow: \n\n", UserRow, "\n\n");
@@ -50,6 +50,4 @@ export const BySearchUsername = ({ searchUserGameTable, filteredUsername }) => {
       </table>
     </div>
   );
-
-  // return null;
 };

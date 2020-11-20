@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import MyVerticallyCenteredModal from "./modals";
 import { Button, Modal } from "react-bootstrap";
 import UsersDataServices from "../services/service-users";
 
@@ -7,13 +6,12 @@ export const ListUsersGame = ({
   userGame,
   usersGame,
   onChangeFormUserGame,
-  handleShow,
-  handleClose,
-  show,
+  onChangeDeleteUsername,
+  deleteValue,
 }) => {
   console.log(
     "\n",
-    "list-usersgame.js_usersGame length:::",
+    "list-list-users-game.js_usersGame length:::",
     usersGame.length,
     "\n\n"
   );
@@ -36,9 +34,13 @@ export const ListUsersGame = ({
     //
     // aksi mancing
     const [show, setShow] = useState(false);
+    const [showDelete, setShowDelete] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const handleCloseDelete = () => setShowDelete(false);
+    const handleShowDelete = () => setShowDelete(true);
 
     const updateUserGame = () => {
       UsersDataServices.updateOneUserGame(usergame.user_id, userGame)
@@ -53,7 +55,7 @@ export const ListUsersGame = ({
     };
 
     const deleteUserGame = () => {
-      UsersDataServices.deleteOneUserGame(usergame.user_id, userGame)
+      UsersDataServices.deleteOneUserGame(usergame.user_id, deleteValue)
         .then((response) => {
           this.setState({
             users: response.data,
@@ -93,22 +95,62 @@ export const ListUsersGame = ({
         <td>{usergame.email}</td>
         <td>{usergame.password}</td>
         <td>
-          <button
-            onClick={handleShow}
-            className="btn btn-success"
-            type="button"
-            title="edit"
-          >
-            ✒️
-          </button>
+          <div className="input-group-append justify-content-between">
+            <button
+              onClick={handleShow}
+              className="btn btn-success"
+              type="button"
+              title="edit"
+            >
+              ✒️ Update
+            </button>
 
-          <button
-            className="btn btn-success mt-3"
-            type="button"
-            title="destroy or burn"
-          >
-            🔥️
-          </button>
+            <button
+              onClick={handleShowDelete}
+              className="btn btn-success "
+              type="button"
+              title="destroy or burn"
+            >
+              🔥️ Destroy
+            </button>
+            <Modal
+              show={showDelete}
+              size="md"
+              aria-labelledby="contained-modal-title-vcenter"
+              centered
+              onHide={handleCloseDelete}
+            >
+              <form onSubmit={deleteUserGame}>
+                <Modal.Header>
+                  <Modal.Title id="contained-modal-title-vcenter">
+                    Type <strong>{usergame.username}</strong> below for destroy
+                    this row:
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <div className="input-group col-lg p-0">
+                    <input
+                      type="search"
+                      className="form-control ds-input"
+                      placeholder={"type " + usergame.username + " here.."}
+                      value={deleteValue}
+                      onChange={onChangeDeleteUsername}
+                    />
+                  </div>
+                </Modal.Body>
+                <Modal.Footer>
+                  <div className="input-group-append ">
+                    <button
+                      className="san-button-offset btn btn-success ml-4"
+                      type="submit"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </Modal.Footer>
+              </form>
+            </Modal>
+          </div>
         </td>
         <Modal
           show={show}
@@ -118,7 +160,6 @@ export const ListUsersGame = ({
           onHide={handleClose}
         >
           <form onSubmit={updateUserGame}>
-            {/* <form> */}
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-vcenter">
                 Update User Game
@@ -169,7 +210,7 @@ export const ListUsersGame = ({
               </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button type="submit">Create</Button>
+              <Button type="submit">Update</Button>
               <Button onClick={handleClose}>Close</Button>
             </Modal.Footer>
           </form>
@@ -182,11 +223,11 @@ export const ListUsersGame = ({
 
   // console.log(
   //   "\n",
-  //   "list-usersgame.js_usersGameTable: \n\n",
+  //   "list-list-users-game.js_usersGameTable: \n\n",
   //   usersGameTable,
   //   "\n\n"
   // );
-  // console.log("\n", "list-usersgame.js_userGameRow: \n\n", UserGameRow, "\n\n");
+  // console.log("\n", "list-list-users-game.js_userGameRow: \n\n", UserGameRow, "\n\n");
 
   return (
     <div className="col-md-8 col-8 mt-4">
@@ -205,6 +246,4 @@ export const ListUsersGame = ({
       </table>
     </div>
   );
-
-  // return null;
 };

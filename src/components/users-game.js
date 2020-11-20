@@ -3,16 +3,17 @@ import UsersDataServices from "../services/service-users";
 import { BySearchUsername } from "./bysearch-username";
 import { BySearchEmail } from "./bysearch-email";
 import { Header } from "./header";
-import { ListUsersGame } from "./list-usersgame";
+import { ListUsersGame } from "./list-users-game";
 import CreateUserGame from "./create-user-game";
-import { MonitorUserGame } from "./monitor-usergame";
-import UserGameModals from "./modals";
+import { MonitorUserGame } from "./monitor-user-game";
 
 export default class UsersList extends Component {
   constructor(props) {
     super(props);
 
     this.onChangeSearchUsername = this.onChangeSearchUsername.bind(this);
+    this.onChangeDeleteUsername = this.onChangeDeleteUsername.bind(this);
+    this.onChangeFormUserGame = this.onChangeFormUserGame.bind(this);
     this.searchUserGameTable = this.searchUserGameTable.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShow = this.handleShow.bind(this);
@@ -23,10 +24,9 @@ export default class UsersList extends Component {
       filteredEmail: [],
       usersGame: [],
       searchUserGameTable: "",
-      nowUser: null,
-      nowIndex: -1,
       numberOfUsersGameTable: 0,
       show: false,
+      deleteValue: "",
     };
   }
 
@@ -79,6 +79,21 @@ export default class UsersList extends Component {
       "\n",
       "users-game.js_onChangeSearchUsername: ",
       searchUserGameTable,
+      "\n\n"
+    );
+  }
+
+  onChangeDeleteUsername(e) {
+    const deleteValue = e.target.value;
+
+    this.setState({
+      deleteValue: deleteValue,
+    });
+
+    console.log(
+      "\n",
+      "users-game.js_onChangeDeleteUsername: ",
+      deleteValue,
       "\n\n"
     );
   }
@@ -150,15 +165,6 @@ export default class UsersList extends Component {
       });
   }
 
-  setActiveUser(user, index) {
-    this.setState({
-      nowUsers: user,
-      nowIndex: index,
-    });
-
-    console.log("\n", "users-game.js_setActiveUser: ", user, index);
-  }
-
   searchUserGameTable(e) {
     UsersDataServices.searchByUsername(this.state.searchUserGameTable)
       .then((response) => {
@@ -200,10 +206,10 @@ export default class UsersList extends Component {
       filteredUsername,
       filteredEmail,
       searchUserGameTable,
-      nowUser,
-      nowIndex,
+
       show,
       numberOfUsersGameTable,
+      deleteValue,
     } = this.state;
 
     console.log(
@@ -219,17 +225,13 @@ export default class UsersList extends Component {
       filteredEmail,
       " \n\n-searchUserGameTable:",
       searchUserGameTable,
-      " \n\n-nowUser:",
-      nowUser,
-      " \n\n-nowIndex:",
-      nowIndex,
       " \n\n-show:",
       show,
       " \n\n"
     );
     return (
       <div className="dashboard">
-        <Header />
+        {/* <Header /> */}
         <div className="container">
           <div className="row">
             <div className="col-md-8 mb-4">
@@ -260,26 +262,12 @@ export default class UsersList extends Component {
                   <button
                     className="san-button-offset btn btn-success ml-4"
                     type="submit"
-                    //   type="button"
-                    //   onClick={this.searchUsername}
                   >
                     Search
                   </button>
                 </div>
               </form>
             </div>
-            <ListUsersGame
-              // show={show}
-              // handleClose={this.handleClose}
-              // handleShow={this.handleShow}
-              userGame={userGame}
-              usersGame={usersGame}
-              onChangeFormUserGame={this.onChangeFormUserGame}
-            ></ListUsersGame>
-            {/* <UserGameModals
-              onChangeFormUserGame={this.onChangeFormUserGame}
-              createUserGame={this.createUserGame}
-            ></UserGameModals> */}
             <BySearchUsername
               searchUserGameTable={searchUserGameTable}
               filteredUsername={filteredUsername}
@@ -288,51 +276,13 @@ export default class UsersList extends Component {
               searchUserGameTable={searchUserGameTable}
               filteredEmail={filteredEmail}
             ></BySearchEmail>
-            {/* <div className="col-md-6">
-          <h4>Users List</h4>
-
-          <ul className="list-group">
-            {users &&
-              users.map((user, index) => {
-                <li
-                  className={
-                    "list-group-item" + (index === nowIndex ? "active" : "")
-                  }
-                  onClick={() => this.setActiveUser(user, index)}
-                  key={index}
-                >
-                  {user.username}
-                </li>;
-              })}
-          </ul>
-        </div> */}
-            {/* <div className="col-md-6">
-          {nowUser ? (
-            <div>
-              <h4>User</h4>
-              <div>
-                <label>
-                  <strong>Username:</strong>
-                </label>
-                {nowUser.username}
-              </div>
-              <div>
-                <label>
-                  <strong>Email:</strong>
-                </label>
-                {nowUser.email}
-              </div>
-              <div>
-                <label>
-                  <strong>Password:</strong>
-                </label>
-                {nowUser.password}
-              </div>
-            </div>
-          ) : (
-            ""
-          )}
-        </div> */}
+            <ListUsersGame
+              deleteValue={deleteValue}
+              userGame={userGame}
+              usersGame={usersGame}
+              onChangeDeleteUsername={this.onChangeDeleteUsername}
+              onChangeFormUserGame={this.onChangeFormUserGame}
+            ></ListUsersGame>
           </div>
         </div>
       </div>

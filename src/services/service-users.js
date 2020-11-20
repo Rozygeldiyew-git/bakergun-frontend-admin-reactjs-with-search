@@ -1,6 +1,8 @@
 import apiAdmin from "./http-service";
 
 class UsersDataServices {
+  //
+  //User Game
   createUserGame(userGame) {
     return apiAdmin.post("/user-game", userGame);
   }
@@ -9,8 +11,8 @@ class UsersDataServices {
     return apiAdmin.get("/user-game");
   }
 
-  deleteOneUserGame(userid, userGame) {
-    return apiAdmin.delete(`/user-game/${userid}`, userGame);
+  deleteOneUserGame(userid, username) {
+    return apiAdmin.delete(`/user-game/${userid}?username=${username}`);
   }
   updateOneUserGame(userid, userGame) {
     return apiAdmin.put(`/user-game/${userid}`, userGame);
@@ -33,6 +35,64 @@ class UsersDataServices {
     } else {
       return apiAdmin.get(`/user-game?${qeueryEmail}=${email}`);
     }
+  }
+
+  //
+  //User Biodata
+  createUserBiodata(userBiodata) {
+    return apiAdmin.post("/user-game-biodata", userBiodata);
+  }
+
+  getAllUserBiodata() {
+    return apiAdmin.get("/user-game-biodata");
+  }
+
+  deleteOneUserBiodata(userBiodataId, fullname) {
+    return apiAdmin.delete(
+      `/user-game-biodata/${userBiodataId}?fullname=${fullname}`
+    );
+  }
+  updateOneUserBiodata(userBiodataId, userBiodata) {
+    return apiAdmin.put(`/user-game-biodata/${userBiodataId}`, userBiodata);
+  }
+
+  searchByFullname(fullname) {
+    return apiAdmin.get(`/user-game-biodata?fullname=${fullname}`);
+  }
+
+  searchBySex(sex) {
+    return apiAdmin.get(`/user-game-biodata?sex=${sex}`);
+  }
+
+  searchByJobs(jobs) {
+    return apiAdmin.get(`/user-game-biodata?jobs=${jobs}`);
+  }
+
+  //
+  //User History
+  createUserHistory(userHistory) {
+    return apiAdmin.post("/user-game-history", userHistory);
+  }
+
+  getAllUserHistory() {
+    return apiAdmin.get("/user-game-history");
+  }
+
+  deleteOneUserHistory(userHistoryId, score) {
+    return apiAdmin.delete(
+      `/user-game-history/${userHistoryId}?score=${score}`
+    );
+  }
+  updateOneUserHistory(userHistoryId, userHistory) {
+    return apiAdmin.put(`/user-game-history/${userHistoryId}`, userHistory);
+  }
+
+  searchByScore(score) {
+    return apiAdmin.get(`/user-game-history?score=${score}`);
+  }
+
+  searchByComment(comment) {
+    return apiAdmin.get(`/user-game-history?comment=${comment}`);
   }
 }
 

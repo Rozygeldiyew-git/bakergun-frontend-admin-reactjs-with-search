@@ -50,6 +50,4 @@ export const BySearchEmail = ({ searchUserGameTable, filteredEmail }) => {
       </table>
     </div>
   );
-
-  // return null;
 };
