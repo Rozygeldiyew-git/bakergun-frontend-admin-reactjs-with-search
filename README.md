@@ -19,7 +19,7 @@ My **ReSTAPI** Project, link 👉️ : [bakergun-backend-service-users](https://
 
 ## 🚀️ Getting Stated Development
 
-    $ cd bakergun-frontend-admin-reactjs-with-searh
+    $ cd bakergun-frontend-admin-reactjs-with-search
 
     $ npm start
 
