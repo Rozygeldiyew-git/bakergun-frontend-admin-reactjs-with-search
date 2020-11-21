@@ -20,7 +20,7 @@ const CreateUserGame = ({ onChangeFormUserGame, createUserGame }) => {
     <div className="container">
       <div className="row">
         <div className="col-md-7">
-          <h2>Create User</h2>
+          <h2>Create User Game</h2>
           <form onSubmit={createUserGame}>
             <div className="row">
               <div className="form-group col-md-12">

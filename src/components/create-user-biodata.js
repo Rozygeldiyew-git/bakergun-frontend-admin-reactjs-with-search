@@ -20,7 +20,7 @@ const CreateUserBiodata = ({ onChangeFormUserBiodata, createUserBiodata }) => {
     <div className="container">
       <div className="row">
         <div className="col-md-7">
-          <h2>Create User</h2>
+          <h2>Create User Biodata</h2>
           <form onSubmit={createUserBiodata}>
             <div className="row">
               <div className="form-group col-md-12">

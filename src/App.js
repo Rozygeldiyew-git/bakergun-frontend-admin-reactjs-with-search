@@ -9,56 +9,42 @@ import { Route, Switch, Link } from "react-router-dom";
 import UsersHistoryList from "./components/users-history";
 import UsersBiodataList from "./components/users-biodata";
 import Home from "./components";
+import { Footer } from "./components/footer";
+import NavbarTop from "./components/navbar";
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <div style={{ backgroundColor: "#000000" }}>
-          <nav className="navbar navbar-expand-xl py-3">
-            <div className=" container-xl container-md container-sm">
-              <div className="h5 text-white font-weight-bolder navbar-brand">
-                <a href="/">
-                  <img src={LogoBakergun} alt="icon" width="40" />
-                </a>
-              </div>
-
-              <div className="navbar-nav mr-auto">
-                <li className="nav-item pr-5">
-                  <Link to={"/users-game"} className="nav-link">
-                    Profil
-                  </Link>
-                </li>
-                <li className="nav-item pr-5">
-                  <Link to={"/users-game-biodata"} className="nav-link">
-                    Biodata
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/users-game-history"} className="nav-link">
-                    History
-                  </Link>
-                </li>
-              </div>
+      <div className="bakergun-admin">
+        <Switch>
+          <Route exact path="/">
+            <NavbarTop></NavbarTop>
+            <div className="container my-5">
+              <Home></Home>
             </div>
-          </nav>
-        </div>
-        <div className="container mt-5">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/users-game" component={UsersList} />
-            <Route
-              exact
-              path="/users-game-biodata"
-              component={UsersBiodataList}
-            />
-            <Route
-              exact
-              path="/users-game-history"
-              component={UsersHistoryList}
-            />
-          </Switch>
-        </div>
+          </Route>
+          <Route exact path="/users-game">
+            <NavbarTop></NavbarTop>
+            <div className="container my-5">
+              <UsersList />
+            </div>
+            <Footer></Footer>
+          </Route>
+          <Route exact path="/users-game-biodata">
+            <NavbarTop></NavbarTop>
+            <div className="container my-5">
+              <UsersBiodataList />
+            </div>
+            <Footer></Footer>
+          </Route>
+          <Route exact path="/users-game-history">
+            <NavbarTop></NavbarTop>
+            <div className="container my-5">
+              <UsersHistoryList />
+            </div>
+            <Footer></Footer>
+          </Route>
+        </Switch>
       </div>
     );
   }

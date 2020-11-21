@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import UsersDataServices from "../services/service-users";
 import { BySearchUsername } from "./bysearch-username";
 import { BySearchEmail } from "./bysearch-email";
-import { Header } from "./header";
+// import { Footer } from "./footer";
 import { ListUsersGame } from "./list-users-game";
 import CreateUserGame from "./create-user-game";
 import { MonitorUserGame } from "./monitor-user-game";
@@ -206,7 +206,6 @@ export default class UsersList extends Component {
       filteredUsername,
       filteredEmail,
       searchUserGameTable,
-
       show,
       numberOfUsersGameTable,
       deleteValue,
@@ -231,7 +230,6 @@ export default class UsersList extends Component {
     );
     return (
       <div className="dashboard">
-        {/* <Header /> */}
         <div className="container">
           <div className="row">
             <div className="col-md-8 mb-4">

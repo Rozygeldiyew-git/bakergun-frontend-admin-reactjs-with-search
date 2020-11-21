@@ -20,7 +20,7 @@ const CreateUserHistory = ({ onChangeFormUserHistory, createUserHistory }) => {
     <div className="container">
       <div className="row">
         <div className="col-md-7">
-          <h2>Create User</h2>
+          <h2>Create User History</h2>
           <form onSubmit={createUserHistory}>
             <div className="row">
               <div className="form-group col-md-12">
