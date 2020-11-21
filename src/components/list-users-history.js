@@ -97,6 +97,7 @@ export const ListUsersHistory = ({
         className={userhistory.user_game_history_id % 2 === 0 ? "odd" : "even"}
       >
         <td>{userhistory.user_game_history_id}</td>
+        <td>{userhistory.user_id}</td>
         <td>{userhistory.score}</td>
         <td>{userhistory.comment}</td>
 
@@ -104,7 +105,7 @@ export const ListUsersHistory = ({
           <div className="input-group-append justify-content-between">
             <button
               onClick={handleShow}
-              className="btn btn-success"
+              className="btn btn-warning"
               type="button"
               title="edit"
             >
@@ -113,7 +114,7 @@ export const ListUsersHistory = ({
 
             <button
               onClick={handleShowDelete}
-              className="btn btn-success "
+              className="btn btn-danger "
               type="button"
               title="destroy or burn"
             >
@@ -137,7 +138,7 @@ export const ListUsersHistory = ({
                   <div className="input-group col-lg p-0">
                     <input
                       type="search"
-                      className="form-control ds-input"
+                      className="form-control form-control-danger ds-input"
                       placeholder={"type " + userhistory.score + " here.."}
                       value={deleteValue}
                       onChange={onChangeDeleteScore}
@@ -145,9 +146,9 @@ export const ListUsersHistory = ({
                   </div>
                 </Modal.Body>
                 <Modal.Footer>
-                  <div className="input-group-append ">
+                  <div className="san-button-danger-soft-offset input-group-append ">
                     <button
-                      className="san-button-offset btn btn-success ml-4"
+                      className="san-button-danger-soft-offset btn btn-danger ml-4"
                       type="submit"
                     >
                       Delete
@@ -178,7 +179,7 @@ export const ListUsersHistory = ({
                   <input
                     type="text"
                     onChange={(e) => onChangeFormUserHistory(e)}
-                    className="form-control"
+                    className="form-control form-control-warning"
                     name="score"
                     id="score"
                     aria-describedby="scoreHelp"
@@ -192,7 +193,7 @@ export const ListUsersHistory = ({
                   <input
                     type="comment"
                     onChange={(e) => onChangeFormUserHistory(e)}
-                    className="form-control"
+                    className="form-control form-control-warning"
                     name="comment"
                     id="comment"
                     aria-describedby="commentHelp"
@@ -202,8 +203,15 @@ export const ListUsersHistory = ({
               </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button type="submit">Update</Button>
-              <Button onClick={handleClose}>Close</Button>
+              <button
+                className="san-button-warning-soft-offset btn btn-warning"
+                type="submit"
+              >
+                Update
+              </button>
+              <Button className="btn btn-danger" onClick={handleClose}>
+                Close
+              </Button>
             </Modal.Footer>
           </form>
         </Modal>
@@ -229,7 +237,8 @@ export const ListUsersHistory = ({
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>History Id</th>
+            <th>User Id</th>
             <th>Score</th>
             <th>Comment</th>
             <th>Edit</th>

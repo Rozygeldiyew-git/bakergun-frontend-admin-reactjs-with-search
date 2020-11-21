@@ -98,7 +98,7 @@ export const ListUsersGame = ({
           <div className="input-group-append justify-content-between">
             <button
               onClick={handleShow}
-              className="btn btn-success"
+              className="btn btn-warning"
               type="button"
               title="edit"
             >
@@ -107,7 +107,7 @@ export const ListUsersGame = ({
 
             <button
               onClick={handleShowDelete}
-              className="btn btn-success "
+              className="btn btn-danger"
               type="button"
               title="destroy or burn"
             >
@@ -131,7 +131,7 @@ export const ListUsersGame = ({
                   <div className="input-group col-lg p-0">
                     <input
                       type="search"
-                      className="form-control ds-input"
+                      className="form-control form-control-danger ds-input"
                       placeholder={"type " + usergame.username + " here.."}
                       value={deleteValue}
                       onChange={onChangeDeleteUsername}
@@ -139,9 +139,9 @@ export const ListUsersGame = ({
                   </div>
                 </Modal.Body>
                 <Modal.Footer>
-                  <div className="input-group-append ">
+                  <div className="san-button-danger-soft-offset input-group-append ">
                     <button
-                      className="san-button-offset btn btn-success ml-4"
+                      className="san-button-danger-soft-offset btn btn-danger ml-4"
                       type="submit"
                     >
                       Delete
@@ -172,7 +172,7 @@ export const ListUsersGame = ({
                   <input
                     type="text"
                     onChange={(e) => onChangeFormUserGame(e)}
-                    className="form-control"
+                    className="form-control form-control-warning"
                     name="username"
                     id="username"
                     aria-describedby="usernameHelp"
@@ -186,7 +186,7 @@ export const ListUsersGame = ({
                   <input
                     type="email"
                     onChange={(e) => onChangeFormUserGame(e)}
-                    className="form-control"
+                    className="form-control form-control-warning"
                     name="email"
                     id="email"
                     aria-describedby="emailHelp"
@@ -200,7 +200,7 @@ export const ListUsersGame = ({
                   <input
                     type="password"
                     onChange={(e) => onChangeFormUserGame(e)}
-                    className="form-control"
+                    className="form-control form-control-warning"
                     name="password"
                     id="password"
                     aria-describedby="passwordHelp"
@@ -210,8 +210,15 @@ export const ListUsersGame = ({
               </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button type="submit">Update</Button>
-              <Button onClick={handleClose}>Close</Button>
+              <button
+                className="san-button-warning-soft-offset btn btn-success"
+                type="submit"
+              >
+                Update
+              </button>
+              <Button className="btn btn-danger" onClick={handleClose}>
+                Close
+              </Button>
             </Modal.Footer>
           </form>
         </Modal>

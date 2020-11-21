@@ -101,10 +101,12 @@ export default class UsersHistoryList extends Component {
   onChangeFormUserHistory = (e) => {
     let userHistory = this.state.userHistory;
 
-    if (e.target.name === "score") {
+    if (e.target.name === "user_id") {
+      userHistory.user_id = e.target.value;
+    } else if (e.target.name === "score") {
       userHistory.score = e.target.value;
-    } else if (e.target.name === "jobs") {
-      userHistory.jobs = e.target.value;
+    } else if (e.target.name === "comment") {
+      userHistory.comment = e.target.value;
     }
 
     this.setState({ userHistory });

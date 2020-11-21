@@ -103,12 +103,14 @@ export default class UsersBiodataList extends Component {
   onChangeFormUserBiodata = (e) => {
     let userBiodata = this.state.userBiodata;
 
-    if (e.target.name === "fullname") {
+    if (e.target.name === "user_id") {
+      userBiodata.user_id = e.target.value;
+    } else if (e.target.name === "fullname") {
       userBiodata.fullname = e.target.value;
     } else if (e.target.name === "sex") {
       userBiodata.sex = e.target.value;
-    } else if (e.target.name === "sex") {
-      userBiodata.sex = e.target.value;
+    } else if (e.target.name === "jobs") {
+      userBiodata.jobs = e.target.value;
     }
 
     this.setState({ userBiodata });

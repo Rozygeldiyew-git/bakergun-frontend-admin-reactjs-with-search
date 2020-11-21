@@ -1,5 +1,4 @@
 import React from "react";
-import Home from ".";
 
 const Footer = () => {
   return (
@@ -14,7 +13,12 @@ const Footer = () => {
       <div class="container-md container-sm py-3 py-md-5">
         <p>
           build with
-          <a href="https://reactjs.org" class="text-success pl-1">
+          <a
+            href="https://reactjs.org"
+            class="text-success pl-1"
+            target="_blank"
+            rel="noreferrer"
+          >
             reactjs
           </a>
         </p>
@@ -24,6 +28,7 @@ const Footer = () => {
             href="https://github.com/sanengineer/bakergun-frontend-admin-reactjs-with-search"
             class="text-success pl-1"
             target="_blank"
+            rel="noreferrer"
           >
             github
           </a>

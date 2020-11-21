@@ -24,6 +24,20 @@ const CreateUserHistory = ({ onChangeFormUserHistory, createUserHistory }) => {
           <form onSubmit={createUserHistory}>
             <div className="row">
               <div className="form-group col-md-12">
+                <label htmlFor="exampleInputUserId">User Id</label>
+                <input
+                  type="text"
+                  onChange={(e) => onChangeFormUserHistory(e)}
+                  className="form-control"
+                  name="user_id"
+                  id="user_id"
+                  aria-describedby="userIdHelp"
+                  placeholder="11"
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="form-group col-md-12">
                 <label htmlFor="exampleInputScore">Score</label>
                 <input
                   type="text"
@@ -46,18 +60,18 @@ const CreateUserHistory = ({ onChangeFormUserHistory, createUserHistory }) => {
                   name="comment"
                   id="comment"
                   aria-describedby="commentHelp"
-                  placeholder="comment.."
+                  placeholder="comment what nich"
                 />
               </div>
             </div>
-            <button
-              // type="button"
-              // onClick={(e) => createUserHistory()}
-              type="submit"
-              className="btn btn-success"
-            >
-              Create
-            </button>
+            <div className="input-group-append">
+              <button
+                type="submit"
+                className="san-button-offset btn btn-success"
+              >
+                Create
+              </button>
+            </div>
           </form>
         </div>
       </div>

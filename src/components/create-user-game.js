@@ -64,14 +64,14 @@ const CreateUserGame = ({ onChangeFormUserGame, createUserGame }) => {
                 />
               </div>
             </div>
-            <button
-              // type="button"
-              // onClick={(e) => createUserGame()}
-              type="submit"
-              className="btn btn-success"
-            >
-              Create
-            </button>
+            <div className="input-group-append">
+              <button
+                type="submit"
+                className="san-button-offset btn btn-success"
+              >
+                Create
+              </button>
+            </div>
           </form>
         </div>
       </div>

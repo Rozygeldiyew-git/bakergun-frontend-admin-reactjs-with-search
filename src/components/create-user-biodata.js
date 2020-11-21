@@ -24,6 +24,20 @@ const CreateUserBiodata = ({ onChangeFormUserBiodata, createUserBiodata }) => {
           <form onSubmit={createUserBiodata}>
             <div className="row">
               <div className="form-group col-md-12">
+                <label htmlFor="exampleInputUserId">User Id</label>
+                <input
+                  type="text"
+                  onChange={(e) => onChangeFormUserBiodata(e)}
+                  className="form-control"
+                  name="user_id"
+                  id="user_id"
+                  aria-describedby="userIdHelp"
+                  placeholder="11"
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="form-group col-md-12">
                 <label htmlFor="exampleInputFullname">Fullname</label>
                 <input
                   type="text"
@@ -60,18 +74,18 @@ const CreateUserBiodata = ({ onChangeFormUserBiodata, createUserBiodata }) => {
                   name="jobs"
                   id="jobs"
                   aria-describedby="jobsHelp"
-                  placeholder="********"
+                  placeholder="engineer"
                 />
               </div>
             </div>
-            <button
-              // type="button"
-              // onClick={(e) => createUserBiodata()}
-              type="submit"
-              className="btn btn-success"
-            >
-              Create
-            </button>
+            <div className="input-group-append">
+              <button
+                type="submit"
+                className="san-button-offset btn btn-success"
+              >
+                Create
+              </button>
+            </div>
           </form>
         </div>
       </div>

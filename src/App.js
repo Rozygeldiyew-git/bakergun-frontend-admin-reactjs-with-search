@@ -3,12 +3,10 @@ import "./assets/scss/style.scss";
 import "./App.css";
 import UsersList from "./components/users-game";
 
-import LogoBakergun from "./assets/icons/logo-bakergun-admin.png";
-
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import UsersHistoryList from "./components/users-history";
 import UsersBiodataList from "./components/users-biodata";
-import Home from "./components";
+import Home from "./components/home";
 import { Footer } from "./components/footer";
 import NavbarTop from "./components/navbar";
 

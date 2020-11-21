@@ -97,6 +97,7 @@ export const ListUsersBiodata = ({
         className={userbiodata.user_game_biodata_id % 2 === 0 ? "odd" : "even"}
       >
         <td>{userbiodata.user_game_biodata_id}</td>
+        <td>{userbiodata.user_id}</td>
         <td>{userbiodata.fullname}</td>
         <td>{userbiodata.sex}</td>
         <td>{userbiodata.jobs}</td>
@@ -104,7 +105,7 @@ export const ListUsersBiodata = ({
           <div className="input-group-append justify-content-between">
             <button
               onClick={handleShow}
-              className="btn btn-success"
+              className="btn btn-warning"
               type="button"
               title="edit"
             >
@@ -113,7 +114,7 @@ export const ListUsersBiodata = ({
 
             <button
               onClick={handleShowDelete}
-              className="btn btn-success "
+              className="btn btn-danger "
               type="button"
               title="destroy or burn"
             >
@@ -137,7 +138,7 @@ export const ListUsersBiodata = ({
                   <div className="input-group col-lg p-0">
                     <input
                       type="search"
-                      className="form-control ds-input"
+                      className="form-control form-control-danger ds-input"
                       placeholder={"type " + userbiodata.fullname + " here.."}
                       value={deleteValue}
                       onChange={onChangeDeleteFullname}
@@ -145,9 +146,9 @@ export const ListUsersBiodata = ({
                   </div>
                 </Modal.Body>
                 <Modal.Footer>
-                  <div className="input-group-append ">
+                  <div className="san-button-danger-soft-offset input-group-append ">
                     <button
-                      className="san-button-offset btn btn-success ml-4"
+                      className="san-button-danger-soft-offset btn btn-danger ml-4"
                       type="submit"
                     >
                       Delete
@@ -178,7 +179,7 @@ export const ListUsersBiodata = ({
                   <input
                     type="text"
                     onChange={(e) => onChangeFormUserBiodata(e)}
-                    className="form-control"
+                    className="form-control form-control-warning"
                     name="fullname"
                     id="fullname"
                     aria-describedby="fullnameHelp"
@@ -192,7 +193,7 @@ export const ListUsersBiodata = ({
                   <input
                     type="sex"
                     onChange={(e) => onChangeFormUserBiodata(e)}
-                    className="form-control"
+                    className="form-control form-control-warning"
                     name="sex"
                     id="sex"
                     aria-describedby="sexHelp"
@@ -206,7 +207,7 @@ export const ListUsersBiodata = ({
                   <input
                     type="jobs"
                     onChange={(e) => onChangeFormUserBiodata(e)}
-                    className="form-control"
+                    className="form-control form-control-warning"
                     name="jobs"
                     id="jobs"
                     aria-describedby="jobsHelp"
@@ -216,8 +217,15 @@ export const ListUsersBiodata = ({
               </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button type="submit">Update</Button>
-              <Button onClick={handleClose}>Close</Button>
+              <button
+                className="san-button-warning-soft-offset btn btn-success"
+                type="submit"
+              >
+                Update
+              </button>
+              <Button className="btn btn-danger" onClick={handleClose}>
+                Close
+              </Button>
             </Modal.Footer>
           </form>
         </Modal>
@@ -243,7 +251,8 @@ export const ListUsersBiodata = ({
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>Biodata Id</th>
+            <th>User Id</th>
             <th>Fullname</th>
             <th>Sex</th>
             <th>Jobs</th>
