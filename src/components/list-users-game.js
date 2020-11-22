@@ -98,7 +98,7 @@ export const ListUsersGame = ({
           <div className="input-group-append justify-content-between">
             <button
               onClick={handleShow}
-              className="btn btn-warning"
+              className="btn btn-warning stabilo-warning font-weight-bold"
               type="button"
               title="edit"
             >
@@ -107,7 +107,7 @@ export const ListUsersGame = ({
 
             <button
               onClick={handleShowDelete}
-              className="btn btn-danger"
+              className="btn btn-danger stabilo-danger font-weight-bold"
               type="button"
               title="destroy or burn"
             >
@@ -211,7 +211,7 @@ export const ListUsersGame = ({
             </Modal.Body>
             <Modal.Footer>
               <button
-                className="san-button-warning-soft-offset btn btn-success"
+                className="san-button-warning-soft-offset btn btn-warning"
                 type="submit"
               >
                 Update

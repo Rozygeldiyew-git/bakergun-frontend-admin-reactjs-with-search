@@ -16,17 +16,17 @@ export default class NavbarTop extends Component {
 
             <div className="navbar-nav mr-auto">
               <li className="nav-item pr-5">
-                <Link to="/users-game" className="nav-link">
+                <Link to="/users-game" className="nav-link f-18">
                   Profil
                 </Link>
               </li>
               <li className="nav-item pr-5">
-                <Link to="/users-game-biodata" className="nav-link">
+                <Link to="/users-game-biodata" className="nav-link f-18">
                   Biodata
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/users-game-history" className="nav-link">
+                <Link to="/users-game-history" className="nav-link f-18">
                   History
                 </Link>
               </li>
