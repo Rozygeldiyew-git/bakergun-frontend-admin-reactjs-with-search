@@ -27,6 +27,7 @@ export default class UsersList extends Component {
       numberOfUsersGameTable: 0,
       show: false,
       deleteValue: "",
+      passwordValue: "",
     };
   }
 
@@ -53,27 +54,37 @@ export default class UsersList extends Component {
       //
       //Debugging
       console.log(
-        "TEST USERS-GAME.JS CONDITIONS STATUS componentDidUpdate:",
+        "\n",
+        "🧪 TEST USERS-GAME.JS:",
+        "\n   ✅ Conditions status of componentDidUpdate:",
         true,
-        "\nValue of prevState:",
+        "\n   ✅ Value of prevState:",
         prevState.numberOfUsersGameTable,
-        "\nValue of this.state:",
+        "\n   ✅ Value of this.state:",
         this.state.numberOfUsersGameTable,
-        "\nValue of prevProps:",
-        prevProps
+        "\n   ✅ Value of prevProps:",
+        prevProps,
+        "\n\n"
       );
 
-      UsersDataServices.getAllUserGame(this.state.usersGame).then(
-        (response) => {
-          this.setState({ usersGame: response.data });
-        }
-      );
+      // UsersDataServices.getAllUserGame(this.state.usersGame).then(
+      //   (response) => {
+      //     this.setState({ usersGame: response.data });
+      //   }
+      // );
+
+      this.setState({
+        numberOfUsersGameTable: this.state.numberOfUsersGameTable,
+      });
     } else {
       //
       //Debuging
       console.log(
-        "TEST USERS-GAME.JS CONDITIONS STATUS componentDidUpdate:",
-        false
+        "\n",
+        "🧪 TEST USERS-GAME.JS:",
+        "\n   ✅ Conditions status of componentDidUpdate:",
+        false,
+        "\n\n"
       );
     }
   }
@@ -241,22 +252,22 @@ export default class UsersList extends Component {
 
     console.log(
       "\n",
-      "📺 user-list.js_render: \n",
-      " \n\n-userGame:",
+      "🎮 users-game.js_render: \n",
+      " \n\n   ✅ userGame:",
       userGame,
-      " \n\n-usersGame:",
+      " \n\n   ✅ usersGame:",
       usersGame,
-      " \n\n-filteredUsername:",
+      " \n\n   ✅ filteredUsername:",
       filteredUsername,
-      " \n\n-filteredEmail:",
+      " \n\n   ✅ filteredEmail:",
       filteredEmail,
-      " \n\n-searchUserGameTable:",
+      " \n\n   ✅ searchUserGameTable:",
       searchUserGameTable,
-      " \n\n-show:",
+      " \n\n   ✅ show:",
       show,
-      " \n\n-numberOfUsersGameTable:",
+      " \n\n   ✅ numberOfUsersGameTable:",
       numberOfUsersGameTable,
-      " \n\n-deleteValue:",
+      " \n\n   ✅ deleteValue:",
       deleteValue,
       " \n\n"
     );

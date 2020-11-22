@@ -3,18 +3,18 @@ import React from "react";
 const CreateUserHistory = ({ onChangeFormUserHistory, createUserHistory }) => {
   //
   //debugging
-  console.log(
-    "\n",
-    "TEST CREATE_USER_HISTORY PARAMETERS 1 (onChangeFormUserHistory)",
-    onChangeFormUserHistory,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST CREATE_USER_HISTORY PARAMETERS 2 (createUserHistory)",
-    createUserHistory,
-    "\n\n"
-  );
+  // console.log(
+  //   "\n",
+  //   "TEST CREATE_USER_HISTORY PARAMETERS 1 (onChangeFormUserHistory)",
+  //   onChangeFormUserHistory,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST CREATE_USER_HISTORY PARAMETERS 2 (createUserHistory)",
+  //   createUserHistory,
+  //   "\n\n"
+  // );
 
   return (
     <div className="container">

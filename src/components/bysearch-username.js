@@ -26,8 +26,6 @@ export const BySearchUsername = ({ searchUserGameTable, filteredUsername }) => {
       >
         <td>{usergame.user_id}</td>
         <td>{usergame.username}</td>
-        <td>{usergame.email}</td>
-        <td>{usergame.password}</td>
       </tr>
     );
   };
@@ -47,8 +45,6 @@ export const BySearchUsername = ({ searchUserGameTable, filteredUsername }) => {
           <tr>
             <th>Id</th>
             <th>Username</th>
-            <th>Email</th>
-            <th>Password</th>
           </tr>
         </thead>
         <tbody>{userTable}</tbody>

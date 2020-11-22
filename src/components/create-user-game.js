@@ -3,18 +3,18 @@ import React from "react";
 const CreateUserGame = ({ onChangeFormUserGame, createUserGame }) => {
   //
   //debugging
-  console.log(
-    "\n",
-    "TEST CREATE_USER_GAME PARAMETERS 1 (onChangeFormUserGame)",
-    onChangeFormUserGame,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST CREATE_USER_GAME PARAMETERS 2 (createUserGame)",
-    createUserGame,
-    "\n\n"
-  );
+  // console.log(
+  //   "\n",
+  //   "TEST CREATE_USER_GAME PARAMETERS 1 (onChangeFormUserGame)",
+  //   onChangeFormUserGame,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST CREATE_USER_GAME PARAMETERS 2 (createUserGame)",
+  //   createUserGame,
+  //   "\n\n"
+  // );
 
   return (
     <div className="container">

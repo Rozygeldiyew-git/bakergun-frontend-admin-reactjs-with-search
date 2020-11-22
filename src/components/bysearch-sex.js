@@ -25,9 +25,8 @@ export const BySearchSex = ({ searchUserBiodataTable, filteredSex }) => {
         className={userbiodata.user_game_biodata_id % 2 === 0 ? "odd" : "even"}
       >
         <td>{userbiodata.user_game_biodata_id}</td>
-        <td>{userbiodata.fullname}</td>
         <td>{userbiodata.sex}</td>
-        <td>{userbiodata.jobs}</td>
+        <td>{userbiodata.user_id}</td>
       </tr>
     );
   };
@@ -45,10 +44,9 @@ export const BySearchSex = ({ searchUserBiodataTable, filteredSex }) => {
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Fullname</th>
+            <th>Biodata Id</th>
             <th>Sex</th>
-            <th>Jobs</th>
+            <th>User Id</th>
           </tr>
         </thead>
         <tbody>{userTable}</tbody>

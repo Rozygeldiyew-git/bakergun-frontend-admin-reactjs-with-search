@@ -13,7 +13,7 @@ export const ListUsersHistory = ({
   //Debugging
   console.log(
     "\n",
-    "list-list-users-history.js_usersHistory length:::",
+    "list-users-history.js_usersHistory length:::",
     usersHistory.length,
     "\n\n"
   );
@@ -23,30 +23,30 @@ export const ListUsersHistory = ({
     userHistory,
     "\n\n"
   );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_HISTORY PARAMETERS 2 (usersHistory)",
-    usersHistory,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_HISTORY PARAMETERS 3 (onChangeFormUserHistory)",
-    onChangeFormUserHistory,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_HISTORY PARAMETERS 4 (onChangeDeleteScore)",
-    onChangeDeleteScore,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_HISTORY PARAMETERS 5 (deleteValue)",
-    deleteValue,
-    "\n\n"
-  );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_HISTORY PARAMETERS 2 (usersHistory)",
+  //   usersHistory,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_HISTORY PARAMETERS 3 (onChangeFormUserHistory)",
+  //   onChangeFormUserHistory,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_HISTORY PARAMETERS 4 (onChangeDeleteScore)",
+  //   onChangeDeleteScore,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_HISTORY PARAMETERS 5 (deleteValue)",
+  //   deleteValue,
+  //   "\n\n"
+  // );
 
   if (usersHistory.length === 0) return null;
 
@@ -122,18 +122,18 @@ export const ListUsersHistory = ({
 
     //
     //Debugging
-    console.log(
-      "\n",
-      "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW FUNCTION 1 (updateUserHistory):",
-      updateUserHistory,
-      "\n\n"
-    );
-    console.log(
-      "\n",
-      "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW FUNCTION 2 (deleteUserHistory):",
-      updateUserHistory,
-      "\n\n"
-    );
+    // console.log(
+    //   "\n",
+    //   "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW FUNCTION 1 (updateUserHistory):",
+    //   updateUserHistory,
+    //   "\n\n"
+    // );
+    // console.log(
+    //   "\n",
+    //   "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW FUNCTION 2 (deleteUserHistory):",
+    //   updateUserHistory,
+    //   "\n\n"
+    // );
 
     return (
       <tr
@@ -153,7 +153,7 @@ export const ListUsersHistory = ({
               type="button"
               title="edit"
             >
-              ✒️ Update
+              <span className="emoji-30"> ✒️ </span>Update
             </button>
 
             <button
@@ -162,7 +162,7 @@ export const ListUsersHistory = ({
               type="button"
               title="destroy or burn"
             >
-              🔥️ Destroy
+              <span className="emoji-30">🔥️</span>Destroy
             </button>
             <Modal
               show={showDelete}
@@ -271,11 +271,11 @@ export const ListUsersHistory = ({
   //Debugging
   // console.log(
   //   "\n",
-  //   "list-list-users-history.js_usersHistoryTable: \n\n",
+  //   "list-users-history.js_usersHistoryTable: \n\n",
   //   usersHistoryTable,
   //   "\n\n"
   // );
-  // console.log("\n", "list-list-users-history.js_userHistoryRow: \n\n", UserHistoryRow, "\n\n");
+  // console.log("\n", "list-users-history.js_userHistoryRow: \n\n", UserHistoryRow, "\n\n");
 
   return (
     <div className="col-md-8 col-8 mt-4">

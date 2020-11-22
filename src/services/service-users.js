@@ -14,8 +14,13 @@ class UsersDataServices {
   deleteOneUserGame(userid, username) {
     return apiAdmin.delete(`/user-game/${userid}?username=${username}`);
   }
+
   updateOneUserGame(userid, userGame) {
     return apiAdmin.put(`/user-game/${userid}`, userGame);
+  }
+
+  changeOneUserGamePassword(userid, userGamePassword) {
+    return apiAdmin.put(`/user-game-password/${userid}`, userGamePassword);
   }
 
   searchByUsername(username) {

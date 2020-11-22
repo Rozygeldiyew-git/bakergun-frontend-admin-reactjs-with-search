@@ -96,6 +96,19 @@ h6,
   left: 4px;
 }
 
+.san-button-very-danger-soft-offset:after {
+  content: "";
+  background: #d901ff;
+  /* width: auto; */
+  min-width: 100%;
+  /* height: auto; */
+  min-height: 100%;
+  position: absolute;
+  top: 4px;
+  z-index: -1;
+  left: 4px;
+}
+
 .san-button-warning-soft-offset:after {
   content: "";
   background: #ffd000;
@@ -149,6 +162,18 @@ h6,
   }
 }
 
+.btn-very-danger {
+  background-color: unset;
+  color: rgb(0, 0, 0);
+  border-color: #ea00ff;
+
+  &:hover {
+    color: #fff;
+    background-color: #ea00ff;
+    border-color: #ea00ff;
+  }
+}
+
 .form-control:focus {
   color: #0b4900;
   background-color: #fff;
@@ -167,6 +192,18 @@ h6,
   border-color: #f62121;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(241, 6, 6, 0.25);
+}
+
+.form-control-very-danger {
+  border-color: #ff00f2;
+}
+
+.form-control-very-danger:focus {
+  color: #310033;
+  background-color: #fff;
+  border-color: #ea02ff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(247, 1, 255, 0.426);
 }
 
 .form-control-warning {
@@ -220,13 +257,38 @@ h6,
   border-color: #d42020;
   box-shadow: unset;
 }
+
+.btn-very-danger:focus {
+  color: rgb(0, 0, 0);
+  background-color: unset;
+  border-color: #ff00ea;
+  box-shadow: unset;
+}
+.btn-very-danger.focus {
+  color: rgb(0, 0, 0);
+  background-color: unset;
+  border-color: #d901ff;
+  box-shadow: unset;
+}
+
 .stabilo-danger:after {
   position: absolute;
   content: "";
   background-color: #ff0800a4;
   width: 81%;
   height: 18%;
-  top: 42px;
+  top: 62px;
+  z-index: -2;
+  left: 7px;
+}
+
+.stabilo-very-danger:after {
+  position: absolute;
+  content: "";
+  background-color: #e100ffa4;
+  width: 87%;
+  height: 18%;
+  top: 62px;
   z-index: -2;
   left: 7px;
 }
@@ -237,7 +299,7 @@ h6,
   background-color: #ffcc00e7;
   width: 81%;
   height: 18%;
-  top: 42px;
+  top: 62px;
   z-index: -2;
   left: 7px;
 }
@@ -264,4 +326,13 @@ h6,
 .f-18 {
   font-size: 18px;
   font-weight: 400;
+}
+
+.f-12 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.emoji-30 {
+  font-size: 30px;
 }

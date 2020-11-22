@@ -26,7 +26,7 @@ export const BySearchScore = ({ searchUserHistoryTable, filteredScore }) => {
       >
         <td>{userhistory.user_game_history_id}</td>
         <td>{userhistory.score}</td>
-        <td>{userhistory.comment}</td>
+        <td>{userhistory.user_id}</td>
       </tr>
     );
   };
@@ -44,9 +44,9 @@ export const BySearchScore = ({ searchUserHistoryTable, filteredScore }) => {
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>History Id</th>
             <th>Score</th>
-            <th>Comment</th>
+            <th>User Id</th>
           </tr>
         </thead>
         <tbody>{userTable}</tbody>

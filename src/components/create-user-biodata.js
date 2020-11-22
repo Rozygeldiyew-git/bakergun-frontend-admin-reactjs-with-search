@@ -3,18 +3,18 @@ import React from "react";
 const CreateUserBiodata = ({ onChangeFormUserBiodata, createUserBiodata }) => {
   //
   //debugging
-  console.log(
-    "\n",
-    "TEST CREATE_USER_BIODATA PARAMETERS 1 (onChangeFormUserBiodata)",
-    onChangeFormUserBiodata,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST CREATE_USER_BIODATA PARAMETERS 2 (createUserBiodata)",
-    createUserBiodata,
-    "\n\n"
-  );
+  // console.log(
+  //   "\n",
+  //   "TEST CREATE_USER_BIODATA PARAMETERS 1 (onChangeFormUserBiodata)",
+  //   onChangeFormUserBiodata,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST CREATE_USER_BIODATA PARAMETERS 2 (createUserBiodata)",
+  //   createUserBiodata,
+  //   "\n\n"
+  // );
 
   return (
     <div className="container">

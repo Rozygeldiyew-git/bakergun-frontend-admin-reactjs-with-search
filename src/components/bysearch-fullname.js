@@ -29,8 +29,7 @@ export const BySearchFullname = ({
       >
         <td>{userbiodata.user_game_biodata_id}</td>
         <td>{userbiodata.fullname}</td>
-        <td>{userbiodata.sex}</td>
-        <td>{userbiodata.jobs}</td>
+        <td>{userbiodata.user_id}</td>
       </tr>
     );
   };
@@ -48,10 +47,9 @@ export const BySearchFullname = ({
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>Biodata Id</th>
             <th>Fullname</th>
-            <th>Sex</th>
-            <th>Jobs</th>
+            <th>User Id</th>
           </tr>
         </thead>
         <tbody>{userTable}</tbody>

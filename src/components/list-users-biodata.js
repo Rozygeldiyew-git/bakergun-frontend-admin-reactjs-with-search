@@ -13,7 +13,7 @@ export const ListUsersBiodata = ({
   //Debugging
   console.log(
     "\n",
-    "list-list-users-biodata.js_usersBiodata length:::",
+    "list-users-biodata.js_usersBiodata length:::",
     usersBiodata.length,
     "\n\n"
   );
@@ -23,30 +23,30 @@ export const ListUsersBiodata = ({
     userBiodata,
     "\n\n"
   );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_BIODATA PARAMETERS 2 (usersBiodata)",
-    usersBiodata,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_BIODATA PARAMETERS 3 (onChangeFormUserBiodata)",
-    onChangeFormUserBiodata,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_BIODATA PARAMETERS 4 (onChangeDeleteFullname)",
-    onChangeDeleteFullname,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_BIODATA PARAMETERS 5 (deleteValue)",
-    deleteValue,
-    "\n\n"
-  );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_BIODATA PARAMETERS 2 (usersBiodata)",
+  //   usersBiodata,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_BIODATA PARAMETERS 3 (onChangeFormUserBiodata)",
+  //   onChangeFormUserBiodata,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_BIODATA PARAMETERS 4 (onChangeDeleteFullname)",
+  //   onChangeDeleteFullname,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_BIODATA PARAMETERS 5 (deleteValue)",
+  //   deleteValue,
+  //   "\n\n"
+  // );
 
   if (usersBiodata.length === 0) return null;
 
@@ -124,18 +124,18 @@ export const ListUsersBiodata = ({
 
     //
     //Debugging
-    console.log(
-      "\n",
-      "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW FUNCTION 1 (updateUserBiodata):",
-      updateUserBiodata,
-      "\n\n"
-    );
-    console.log(
-      "\n",
-      "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW FUNCTION 2 (deleteUserBiodata):",
-      deleteUserBiodata,
-      "\n\n"
-    );
+    // console.log(
+    //   "\n",
+    //   "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW FUNCTION 1 (updateUserBiodata):",
+    //   updateUserBiodata,
+    //   "\n\n"
+    // );
+    // console.log(
+    //   "\n",
+    //   "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW FUNCTION 2 (deleteUserBiodata):",
+    //   deleteUserBiodata,
+    //   "\n\n"
+    // );
 
     return (
       <tr
@@ -155,7 +155,7 @@ export const ListUsersBiodata = ({
               type="button"
               title="edit"
             >
-              ✒️ Update
+              <span className="emoji-30"> ✒️ </span>Update
             </button>
 
             <button
@@ -164,7 +164,7 @@ export const ListUsersBiodata = ({
               type="button"
               title="destroy or burn"
             >
-              🔥️ Destroy
+              <span className="emoji-30">🔥️</span>Destroy
             </button>
             <Modal
               show={showDelete}
@@ -285,18 +285,18 @@ export const ListUsersBiodata = ({
 
   //
   //Debugging
-  console.log(
-    "\n",
-    "list-list-users-biodata.js_userBiodataRow: \n\n",
-    UserBiodataRow,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "list-list-users-biodata.js_usersBiodataTable: \n\n",
-    usersBiodataTable,
-    "\n\n"
-  );
+  // console.log(
+  //   "\n",
+  //   "list-users-biodata.js_userBiodataRow: \n\n",
+  //   UserBiodataRow,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "list-users-biodata.js_usersBiodataTable: \n\n",
+  //   usersBiodataTable,
+  //   "\n\n"
+  // );
 
   return (
     <div className="col-md-8 col-8 mt-4">

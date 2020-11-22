@@ -55,14 +55,17 @@ export default class UsersBiodataList extends Component {
       //
       //Debugging
       console.log(
-        "TEST USERS-BIODATA.JS CONDITIONS STATUS componentDidUpdate: ",
+        "\n",
+        "🧪 TEST USERS-BIODATA.JS:",
+        "\n   ✅ Conditions Status of componentDidUpdate: ",
         true,
-        "\nValue of prevState:",
+        "\n   ✅ Value of prevState:",
         prevState.numberOfUsersBiodataTable,
-        "\nValue of this.state:",
+        "\n   ✅ Value of this.state:",
         this.state.numberOfUsersBiodataTable,
-        "\nValue of prevProps:",
-        prevProps
+        "\n   ✅ Value of prevProps:",
+        prevProps,
+        "\n\n"
       );
 
       UsersDataServices.getAllUserBiodata(this.state.usersBiodata).then(
@@ -74,8 +77,11 @@ export default class UsersBiodataList extends Component {
       //
       //Debugging
       console.log(
-        "USERS-BIODATA.JS CONDITIONS STATUS componentDidUpdate: ",
-        false
+        "\n",
+        "🧪 TEST USERS-BIODATA.JS:",
+        "\n   ✅ Conditions Status of  componentDidUpdate: ",
+        false,
+        "\n\n"
       );
     }
   }
@@ -273,24 +279,24 @@ export default class UsersBiodataList extends Component {
     //Debugging
     console.log(
       "\n",
-      "📺 user-list.js_render: \n",
-      " \n\n-userBiodata:",
+      "📊 users-biodata.js_render: \n",
+      " \n\n   ✅ userBiodata:",
       userBiodata,
-      " \n\n-usersBiodata:",
+      " \n\n   ✅ usersBiodata:",
       usersBiodata,
-      " \n\n-filteredFullname:",
+      " \n\n   ✅ filteredFullname:",
       filteredFullname,
-      " \n\n-filteredSex:",
+      " \n\n   ✅ filteredSex:",
       filteredSex,
-      " \n\n-filteredJobs:",
+      " \n\n   ✅ filteredJobs:",
       filteredJobs,
-      " \n\n-searchUserBiodataTable:",
+      " \n\n   ✅ searchUserBiodataTable:",
       searchUserBiodataTable,
-      " \n\n-show:",
+      " \n\n   ✅ show:",
       show,
-      " \n\n-numberOfUsersBiodataTable:",
+      " \n\n   ✅ numberOfUsersBiodataTable:",
       numberOfUsersBiodataTable,
-      " \n\n-deleteValue:",
+      " \n\n   ✅ deleteValue:",
       deleteValue,
       " \n\n"
     );

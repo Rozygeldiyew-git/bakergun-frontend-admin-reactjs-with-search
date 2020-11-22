@@ -28,8 +28,8 @@ export const BySearchComment = ({
         className={userhistory.user_game_history_id % 2 === 0 ? "odd" : "even"}
       >
         <td>{userhistory.user_game_history_id}</td>
-        <td>{userhistory.score}</td>
         <td>{userhistory.comment}</td>
+        <td>{userhistory.user_id}</td>
       </tr>
     );
   };
@@ -47,9 +47,9 @@ export const BySearchComment = ({
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Score</th>
+            <th>History Id</th>
             <th>Comment</th>
+            <th>User Id</th>
           </tr>
         </thead>
         <tbody>{userTable}</tbody>

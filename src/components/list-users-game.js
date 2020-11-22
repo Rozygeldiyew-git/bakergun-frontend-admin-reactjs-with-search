@@ -13,7 +13,7 @@ export const ListUsersGame = ({
   //Debugging
   console.log(
     "\n",
-    "list-list-users-game.js_usersGame length:::",
+    "list-users-game.js_usersGame length:::",
     usersGame.length,
     "\n\n"
   );
@@ -23,30 +23,30 @@ export const ListUsersGame = ({
     userGame,
     "\n\n"
   );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_GAME PARAMETERS 2 (usersGame)",
-    usersGame,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_GAME PARAMETERS 3 (onChangeFormUserGame)",
-    onChangeFormUserGame,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_GAME PARAMETERS 4 (onChangeDeleteUsername)",
-    onChangeDeleteUsername,
-    "\n\n"
-  );
-  console.log(
-    "\n",
-    "TEST LIST_USERS_GAME PARAMETERS 5 (deleteValue)",
-    deleteValue,
-    "\n\n"
-  );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_GAME PARAMETERS 2 (usersGame)",
+  //   usersGame,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_GAME PARAMETERS 3 (onChangeFormUserGame)",
+  //   onChangeFormUserGame,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_GAME PARAMETERS 4 (onChangeDeleteUsername)",
+  //   onChangeDeleteUsername,
+  //   "\n\n"
+  // );
+  // console.log(
+  //   "\n",
+  //   "TEST LIST_USERS_GAME PARAMETERS 5 (deleteValue)",
+  //   deleteValue,
+  //   "\n\n"
+  // );
 
   if (usersGame.length === 0) return null;
 
@@ -55,12 +55,16 @@ export const ListUsersGame = ({
     // aksi mancing
     const [show, setShow] = useState(false);
     const [showDelete, setShowDelete] = useState(false);
+    const [showChangePassword, setShowChangePassword] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const handleCloseDelete = () => setShowDelete(false);
     const handleShowDelete = () => setShowDelete(true);
+
+    const handleCloseChangePassword = () => setShowChangePassword(false);
+    const handleShowChangePassword = () => setShowChangePassword(true);
 
     const updateUserGame = () => {
       UsersDataServices.updateOneUserGame(usergame.user_id, userGame)
@@ -114,20 +118,46 @@ export const ListUsersGame = ({
       );
     };
 
+    const changeUserGamePassword = () => {
+      UsersDataServices.changeOneUserGamePassword(usergame.user_id, userGame)
+        .then((response) => {
+          this.setState({
+            users: response.data,
+          });
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+      //
+      //Debuging
+      console.log(
+        "\n",
+        "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 1 ON deleteOneUserGame (usergame.user_id):",
+        usergame.user_id,
+        "\n\n"
+      );
+      console.log(
+        "\n",
+        "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 2 ON deleteOneUserGame (deleteValue):",
+        deleteValue,
+        "\n\n"
+      );
+    };
+
     //
     //Debugging
-    console.log(
-      "\n",
-      "TEST LIST_USERS_GAME-USER_GAME_ROW FUNCTION 1 (updateUserGame):",
-      updateUserGame,
-      "\n\n"
-    );
-    console.log(
-      "\n",
-      "TEST LIST_USERS_GAME-USER_GAME_ROW FUNCTION 2 (deleteUserGame):",
-      deleteUserGame,
-      "\n\n"
-    );
+    // console.log(
+    //   "\n",
+    //   "TEST LIST_USERS_GAME-USER_GAME_ROW FUNCTION 1 (updateUserGame):",
+    //   updateUserGame,
+    //   "\n\n"
+    // );
+    // console.log(
+    //   "\n",
+    //   "TEST LIST_USERS_GAME-USER_GAME_ROW FUNCTION 2 (deleteUserGame):",
+    //   deleteUserGame,
+    //   "\n\n"
+    // );
 
     return (
       <tr
@@ -137,7 +167,6 @@ export const ListUsersGame = ({
         <td>{usergame.user_id}</td>
         <td>{usergame.username}</td>
         <td>{usergame.email}</td>
-        <td>{usergame.password}</td>
         <td>
           <div className="input-group-append justify-content-between">
             <button
@@ -146,7 +175,7 @@ export const ListUsersGame = ({
               type="button"
               title="edit"
             >
-              ✒️ Update
+              <span className="emoji-30"> ✒️ </span>Update
             </button>
 
             <button
@@ -155,7 +184,7 @@ export const ListUsersGame = ({
               type="button"
               title="destroy or burn"
             >
-              🔥️ Destroy
+              <span className="emoji-30">🔥️</span>Destroy
             </button>
             <Modal
               show={showDelete}
@@ -189,6 +218,52 @@ export const ListUsersGame = ({
                       type="submit"
                     >
                       Delete
+                    </button>
+                  </div>
+                </Modal.Footer>
+              </form>
+            </Modal>
+            <button
+              onClick={handleShowChangePassword}
+              className="btn btn-very-danger stabilo-very-danger font-weight-bold"
+              type="button"
+              title="change password"
+            >
+              <span className="emoji-30">🗝</span>
+              Password
+            </button>
+            <Modal
+              show={showChangePassword}
+              size="md"
+              aria-labelledby="contained-modal-title-vcenter"
+              centered
+              onHide={handleCloseChangePassword}
+            >
+              <form onSubmit={changeUserGamePassword}>
+                <Modal.Header>
+                  <Modal.Title id="contained-modal-title-vcenter">
+                    Type your<strong> new password</strong> below:
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <div className="input-group col-lg p-0">
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="form-control form-control-very-danger ds-input"
+                      placeholder="********"
+                      onChange={(e) => onChangeFormUserGame(e)}
+                    />
+                  </div>
+                </Modal.Body>
+                <Modal.Footer>
+                  <div className="san-button-very-danger-soft-offset input-group-append ">
+                    <button
+                      className="san-button-very-danger-soft-offset btn btn-very-danger ml-4"
+                      type="submit"
+                    >
+                      Change
                     </button>
                   </div>
                 </Modal.Footer>
@@ -238,20 +313,6 @@ export const ListUsersGame = ({
                   />
                 </div>
               </div>
-              <div className="row">
-                <div className="form-group col-md-12">
-                  <label htmlFor="exampleInputPassword">Password</label>
-                  <input
-                    type="password"
-                    onChange={(e) => onChangeFormUserGame(e)}
-                    className="form-control form-control-warning"
-                    name="password"
-                    id="password"
-                    aria-describedby="passwordHelp"
-                    placeholder="********"
-                  />
-                </div>
-              </div>
             </Modal.Body>
             <Modal.Footer>
               <button
@@ -276,14 +337,14 @@ export const ListUsersGame = ({
   //Debugging
   // console.log(
   //   "\n",
-  //   "list-list-users-game.js_usersGameTable: \n\n",
+  //   "list-users-game.js_usersGameTable: \n\n",
   //   usersGameTable,
   //   "\n\n"
   // );
-  // console.log("\n", "list-list-users-game.js_userGameRow: \n\n", UserGameRow, "\n\n");
+  // console.log("\n", "list-users-game.js_userGameRow: \n\n", UserGameRow, "\n\n");
 
   return (
-    <div className="col-md-8 col-8 mt-4">
+    <div className="col-5 mt-4">
       <h4>Users Game </h4>
       <table className="table table-bordered">
         <thead>
@@ -291,7 +352,6 @@ export const ListUsersGame = ({
             <th>Id</th>
             <th>Username</th>
             <th>Email</th>
-            <th>Password</th>
             <th>Edit</th>
           </tr>
         </thead>

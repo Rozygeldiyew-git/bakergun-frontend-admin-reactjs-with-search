@@ -53,14 +53,17 @@ export default class UsersHistoryList extends Component {
       //
       //Debugging
       console.log(
-        "TEST USERS-HISTORY.JS CONDITIONS STATUS componentDidUpdate: ",
+        "\n",
+        "🧪 TEST USERS-HISTORY.JS: ",
+        "\n   ✅ Conditions status of componentDidUpdate:",
         true,
-        "\nValue of prevState:",
+        "\n   ✅ Value of prevState:",
         prevState.numberOfUsersHistoryTable,
-        "\nValue of this.state:",
+        "\n   ✅ Value of this.state:",
         this.state.numberOfUsersHistoryTable,
-        "\nValue of prevProps:",
-        prevProps
+        "\n   ✅ Value of prevProps:",
+        prevProps,
+        "\n\n"
       );
 
       UsersDataServices.getAllUserHistory(this.state.usersHistory).then(
@@ -72,8 +75,11 @@ export default class UsersHistoryList extends Component {
       //
       //Debugging
       console.log(
-        "TEST USERS-HISTORY.JS CONDITIONS STATUS componentDidUpdate: ",
-        false
+        "\n",
+        "🧪 TEST USERS-HISTORY.JS:",
+        "\n   ✅ Conditions Status of componentDidUpdate: ",
+        false,
+        "\n\n"
       );
     }
   }
@@ -258,22 +264,22 @@ export default class UsersHistoryList extends Component {
 
     console.log(
       "\n",
-      "📺 user-list.js_render: \n",
-      " \n\n-userHistory:",
+      "🪦 user-history.js_render: \n",
+      " \n\n   ✅ userHistory:",
       userHistory,
-      " \n\n-usersHistory:",
+      " \n\n   ✅ usersHistory:",
       usersHistory,
-      " \n\n-filteredScore:",
+      " \n\n   ✅ filteredScore:",
       filteredScore,
-      " \n\n-filteredComment:",
+      " \n\n   ✅ filteredComment:",
       filteredComment,
-      " \n\n-searchUserHistoryTable:",
+      " \n\n   ✅ searchUserHistoryTable:",
       searchUserHistoryTable,
-      " \n\n-show:",
+      " \n\n   ✅ show:",
       show,
-      " \n\n-numberOfUsersHistoryTable:",
+      " \n\n   ✅ numberOfUsersHistoryTable:",
       numberOfUsersHistoryTable,
-      " \n\n-deleteValue:",
+      " \n\n   ✅ deleteValue:",
       deleteValue,
       " \n\n"
     );
