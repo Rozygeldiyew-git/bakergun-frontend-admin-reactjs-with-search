@@ -16,6 +16,7 @@ My **ReSTAPI** Project, link 👉️ : [bakergun-backend-service-users](https://
 - [React Reveal](https://github.com/rnosov/react-reveal)
 - [Node SASS](https://github.com/sass/node-sass)
 - [Axios](https://github.com/axios/axios)
+- [React Countup](https://github.com/glennreyes/react-countup)
 
 ## 🚀️ Getting Stated Development
 
