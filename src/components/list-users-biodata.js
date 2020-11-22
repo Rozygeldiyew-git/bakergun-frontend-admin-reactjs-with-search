@@ -155,7 +155,9 @@ export const ListUsersBiodata = ({
               type="button"
               title="edit"
             >
-              <span className="emoji-30"> ✒️ </span>Update
+              <span className="emoji-30"> ✒️ </span>
+              <br />
+              Update
             </button>
 
             <button
@@ -164,7 +166,9 @@ export const ListUsersBiodata = ({
               type="button"
               title="destroy or burn"
             >
-              <span className="emoji-30">🔥️</span>Destroy
+              <span className="emoji-30">🔥️</span>
+              <br />
+              Destroy
             </button>
             <Modal
               show={showDelete}
