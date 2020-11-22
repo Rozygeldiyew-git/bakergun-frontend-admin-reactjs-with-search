@@ -1,4 +1,5 @@
 import React from "react";
+import Countup from "react-countup";
 
 export const MonitorUserBiodata = ({ numberOfUsersBiodataTable }) => {
   return (
@@ -16,7 +17,11 @@ export const MonitorUserBiodata = ({ numberOfUsersBiodataTable }) => {
           className="number"
           style={{ fontSize: "58px", fontWeight: "bold" }}
         >
-          {numberOfUsersBiodataTable}
+          <Countup
+            start={10}
+            useEasing={true}
+            end={numberOfUsersBiodataTable}
+          ></Countup>
         </div>
       </div>
     </div>

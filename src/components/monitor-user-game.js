@@ -1,4 +1,5 @@
 import React from "react";
+import Countup from "react-countup";
 
 export const MonitorUserGame = ({ numberOfUsersGameTable }) => {
   return (
@@ -16,7 +17,11 @@ export const MonitorUserGame = ({ numberOfUsersGameTable }) => {
           className="number"
           style={{ fontSize: "58px", fontWeight: "bold" }}
         >
-          {numberOfUsersGameTable}
+          <Countup
+            start={10}
+            useEasing={true}
+            end={numberOfUsersGameTable}
+          ></Countup>
         </div>
       </div>
     </div>
