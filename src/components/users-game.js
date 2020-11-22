@@ -50,11 +50,16 @@ export default class UsersList extends Component {
     if (
       prevState.numberOfUsersGameTable !== this.state.numberOfUsersGameTable
     ) {
+      //
+      //Debugging
       console.log(
-        "TEST DID Update: ",
+        "TEST USERS-GAME.JS CONDITIONS STATUS componentDidUpdate:",
         true,
+        "\nValue of prevState:",
         prevState.numberOfUsersGameTable,
+        "\nValue of this.state:",
         this.state.numberOfUsersGameTable,
+        "\nValue of prevProps:",
         prevProps
       );
 
@@ -64,7 +69,12 @@ export default class UsersList extends Component {
         }
       );
     } else {
-      console.log("TEST DID Update: ", false);
+      //
+      //Debuging
+      console.log(
+        "TEST USERS-GAME.JS CONDITIONS STATUS componentDidUpdate:",
+        false
+      );
     }
   }
 
@@ -75,6 +85,8 @@ export default class UsersList extends Component {
       searchUserGameTable: searchUserGameTable,
     });
 
+    //
+    //Debugging
     console.log(
       "\n",
       "users-game.js_onChangeSearchUsername: ",
@@ -90,6 +102,8 @@ export default class UsersList extends Component {
       deleteValue: deleteValue,
     });
 
+    //
+    //Debugging
     console.log(
       "\n",
       "users-game.js_onChangeDeleteUsername: ",
@@ -111,6 +125,8 @@ export default class UsersList extends Component {
 
     this.setState({ userGame });
 
+    //
+    //Debugging
     console.log("\n", "users-game.js_onChangeFormUserGame: ", userGame, "\n\n");
   };
 
@@ -126,6 +142,9 @@ export default class UsersList extends Component {
         };
       });
       // end test line code
+
+      //
+      //Debugging
       console.log("\n", "users-game.js_createUserGame: ", response, "\n\n");
     });
   };
@@ -158,6 +177,9 @@ export default class UsersList extends Component {
         //   };
         // });
         //test line code end
+
+        //
+        //Debugging
         console.log("\n", "users-game.js_getUsersGame: ", response, "\n\n");
       })
       .catch((e) => {
@@ -171,6 +193,9 @@ export default class UsersList extends Component {
         this.setState({
           filteredUsername: response.data,
         });
+
+        //
+        //Debugging
         console.log(
           "\n",
           "users-game.js_searchUsername_searchByUsername: ",
@@ -185,6 +210,9 @@ export default class UsersList extends Component {
     UsersDataServices.searchByEmail(this.state.searchUserGameTable)
       .then((response) => {
         this.setState({ filteredEmail: response.data });
+
+        //
+        //Debugging
         console.log(
           "\n",
           "users-game.js_searchUsername_searchByUsername: ",
@@ -226,6 +254,10 @@ export default class UsersList extends Component {
       searchUserGameTable,
       " \n\n-show:",
       show,
+      " \n\n-numberOfUsersGameTable:",
+      numberOfUsersGameTable,
+      " \n\n-deleteValue:",
+      deleteValue,
       " \n\n"
     );
     return (

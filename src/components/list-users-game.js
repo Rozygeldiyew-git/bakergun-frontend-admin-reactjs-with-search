@@ -9,6 +9,8 @@ export const ListUsersGame = ({
   onChangeDeleteUsername,
   deleteValue,
 }) => {
+  //
+  //Debugging
   console.log(
     "\n",
     "list-list-users-game.js_usersGame length:::",
@@ -17,7 +19,13 @@ export const ListUsersGame = ({
   );
   console.log(
     "\n",
-    "TEST LIST_USERS_GAME PARAMETERS 1 (usersGame)",
+    "TEST LIST_USERS_GAME PARAMETERS 1 (userGame)",
+    userGame,
+    "\n\n"
+  );
+  console.log(
+    "\n",
+    "TEST LIST_USERS_GAME PARAMETERS 2 (usersGame)",
     usersGame,
     "\n\n"
   );
@@ -25,6 +33,18 @@ export const ListUsersGame = ({
     "\n",
     "TEST LIST_USERS_GAME PARAMETERS 3 (onChangeFormUserGame)",
     onChangeFormUserGame,
+    "\n\n"
+  );
+  console.log(
+    "\n",
+    "TEST LIST_USERS_GAME PARAMETERS 4 (onChangeDeleteUsername)",
+    onChangeDeleteUsername,
+    "\n\n"
+  );
+  console.log(
+    "\n",
+    "TEST LIST_USERS_GAME PARAMETERS 5 (deleteValue)",
+    deleteValue,
     "\n\n"
   );
 
@@ -52,6 +72,20 @@ export const ListUsersGame = ({
         .catch((e) => {
           console.log(e);
         });
+      //
+      //Debuging
+      console.log(
+        "\n",
+        "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 1 ON updateOneUserGame (usergame.user_id):",
+        usergame.user_id,
+        "\n\n"
+      );
+      console.log(
+        "\n",
+        "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 2 updateOneUserGame (userGame):",
+        userGame,
+        "\n\n"
+      );
     };
 
     const deleteUserGame = () => {
@@ -64,24 +98,34 @@ export const ListUsersGame = ({
         .catch((e) => {
           console.log(e);
         });
+      //
+      //Debuging
+      console.log(
+        "\n",
+        "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 1 ON deleteOneUserGame (usergame.user_id):",
+        usergame.user_id,
+        "\n\n"
+      );
+      console.log(
+        "\n",
+        "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 2 ON deleteOneUserGame (deleteValue):",
+        deleteValue,
+        "\n\n"
+      );
     };
 
-    // console.log(
-    //   "\n",
-    //   "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 1 (usergame)",
-    //   usergame,
-    //   "\n\n"
-    // );
+    //
+    //Debugging
     console.log(
       "\n",
-      "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 2 (usergame.user_id):",
-      usergame.user_id,
+      "TEST LIST_USERS_GAME-USER_GAME_ROW FUNCTION 1 (updateUserGame):",
+      updateUserGame,
       "\n\n"
     );
     console.log(
       "\n",
-      "TEST LIST_USERS_GAME-USER_GAME_ROW PARAMETERS 2 (updateUserGame):",
-      updateUserGame,
+      "TEST LIST_USERS_GAME-USER_GAME_ROW FUNCTION 2 (deleteUserGame):",
+      deleteUserGame,
       "\n\n"
     );
 
@@ -228,6 +272,8 @@ export const ListUsersGame = ({
 
   const usersGameTable = usersGame.map((usergame) => UserGameRow(usergame));
 
+  //
+  //Debugging
   // console.log(
   //   "\n",
   //   "list-list-users-game.js_usersGameTable: \n\n",

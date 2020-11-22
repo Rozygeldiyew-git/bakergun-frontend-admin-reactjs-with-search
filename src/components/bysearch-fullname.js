@@ -4,6 +4,8 @@ export const BySearchFullname = ({
   searchUserBiodataTable,
   filteredFullname,
 }) => {
+  //
+  //Debugging
   console.log(
     "\n",
     "bysearch-fullname.js_filteredFullname length:::",
@@ -16,6 +18,7 @@ export const BySearchFullname = ({
     searchUserBiodataTable.length,
     "\n\n"
   );
+
   if (filteredFullname.length === 0) return null;
 
   const UserRow = (userbiodata) => {
@@ -34,8 +37,10 @@ export const BySearchFullname = ({
 
   const userTable = filteredFullname.map((userbiodata) => UserRow(userbiodata));
 
-  console.log("\n", "bysearch-fullname.js_userTable: \n\n", userTable, "\n\n");
-  console.log("\n", "bysearch-fullname.js_UserRow: \n\n", UserRow, "\n\n");
+  //
+  //Debugging
+  // console.log("\n", "bysearch-fullname.js_userTable: \n\n", userTable, "\n\n");
+  // console.log("\n", "bysearch-fullname.js_UserRow: \n\n", UserRow, "\n\n");
 
   return (
     <div className="col-md-8 col-8 mt-4">

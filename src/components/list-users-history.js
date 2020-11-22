@@ -9,6 +9,8 @@ export const ListUsersHistory = ({
   onChangeDeleteScore,
   deleteValue,
 }) => {
+  //
+  //Debugging
   console.log(
     "\n",
     "list-list-users-history.js_usersHistory length:::",
@@ -17,7 +19,13 @@ export const ListUsersHistory = ({
   );
   console.log(
     "\n",
-    "TEST LIST_USERS_HISTORY PARAMETERS 1 (usersHistory)",
+    "TEST LIST_USERS_HISTORY PARAMETERS 1 (userHistory)",
+    userHistory,
+    "\n\n"
+  );
+  console.log(
+    "\n",
+    "TEST LIST_USERS_HISTORY PARAMETERS 2 (usersHistory)",
     usersHistory,
     "\n\n"
   );
@@ -25,6 +33,18 @@ export const ListUsersHistory = ({
     "\n",
     "TEST LIST_USERS_HISTORY PARAMETERS 3 (onChangeFormUserHistory)",
     onChangeFormUserHistory,
+    "\n\n"
+  );
+  console.log(
+    "\n",
+    "TEST LIST_USERS_HISTORY PARAMETERS 4 (onChangeDeleteScore)",
+    onChangeDeleteScore,
+    "\n\n"
+  );
+  console.log(
+    "\n",
+    "TEST LIST_USERS_HISTORY PARAMETERS 5 (deleteValue)",
+    deleteValue,
     "\n\n"
   );
 
@@ -55,6 +75,20 @@ export const ListUsersHistory = ({
         .catch((e) => {
           console.log(e);
         });
+      //
+      //Debugging
+      console.log(
+        "\n",
+        "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW PARAMETERS 1 ON updateOneUserHistory (userhistory.user_game_history_id):",
+        userhistory.user_game_history_id,
+        "\n\n"
+      );
+      console.log(
+        "\n",
+        "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW PARAMETERS 2 ON updateOneUserHistory (userHistory):",
+        userHistory,
+        "\n\n"
+      );
     };
 
     const deleteUserHistory = () => {
@@ -70,23 +104,33 @@ export const ListUsersHistory = ({
         .catch((e) => {
           console.log(e);
         });
+      //
+      //Debugging
+      console.log(
+        "\n",
+        "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW PARAMETERS 1 ON deleteOneUserHistory (userhistory.user_game_history_id):",
+        userhistory.user_game_history_id,
+        "\n\n"
+      );
+      console.log(
+        "\n",
+        "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW PARAMETERS 2 ON deletOneUserHistory (userHistory):",
+        deleteValue,
+        "\n\n"
+      );
     };
 
-    // console.log(
-    //   "\n",
-    //   "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW PARAMETERS 1 (userhistory)",
-    //   userhistory,
-    //   "\n\n"
-    // );
+    //
+    //Debugging
     console.log(
       "\n",
-      "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW PARAMETERS 2 (userhistory.user_game_history_id):",
-      userhistory.user_game_history_id,
+      "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW FUNCTION 1 (updateUserHistory):",
+      updateUserHistory,
       "\n\n"
     );
     console.log(
       "\n",
-      "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW PARAMETERS 2 (updateUserHistory):",
+      "TEST LIST_USERS_HISTORY-USER_HISTORY_ROW FUNCTION 2 (deleteUserHistory):",
       updateUserHistory,
       "\n\n"
     );
@@ -223,6 +267,8 @@ export const ListUsersHistory = ({
     UserHistoryRow(userhistory)
   );
 
+  //
+  //Debugging
   // console.log(
   //   "\n",
   //   "list-list-users-history.js_usersHistoryTable: \n\n",

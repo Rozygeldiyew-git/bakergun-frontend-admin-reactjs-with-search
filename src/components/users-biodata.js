@@ -52,11 +52,16 @@ export default class UsersBiodataList extends Component {
       prevState.numberOfUsersBiodataTable !==
       this.state.numberOfUsersBiodataTable
     ) {
+      //
+      //Debugging
       console.log(
-        "TEST DID Update: ",
+        "TEST USERS-BIODATA.JS CONDITIONS STATUS componentDidUpdate: ",
         true,
+        "\nValue of prevState:",
         prevState.numberOfUsersBiodataTable,
+        "\nValue of this.state:",
         this.state.numberOfUsersBiodataTable,
+        "\nValue of prevProps:",
         prevProps
       );
 
@@ -66,7 +71,12 @@ export default class UsersBiodataList extends Component {
         }
       );
     } else {
-      console.log("TEST DID Update: ", false);
+      //
+      //Debugging
+      console.log(
+        "USERS-BIODATA.JS CONDITIONS STATUS componentDidUpdate: ",
+        false
+      );
     }
   }
 
@@ -77,6 +87,8 @@ export default class UsersBiodataList extends Component {
       searchUserBiodataTable: searchUserBiodataTable,
     });
 
+    //
+    //Debugging
     console.log(
       "\n",
       "users-biodata.js_onChangeSearchFullname: ",
@@ -92,6 +104,8 @@ export default class UsersBiodataList extends Component {
       deleteValue: deleteValue,
     });
 
+    //
+    //Debugging
     console.log(
       "\n",
       "users-biodata.js_onChangeDeleteFullname: ",
@@ -115,6 +129,8 @@ export default class UsersBiodataList extends Component {
 
     this.setState({ userBiodata });
 
+    //
+    //Debugging
     console.log(
       "\n",
       "users-biodata.js_onChangeFormUserBiodata: ",
@@ -136,6 +152,9 @@ export default class UsersBiodataList extends Component {
           };
         });
         // end test line code
+
+        //
+        //Debugging
         console.log(
           "\n",
           "users-biodata.js_createUserBiodata: ",
@@ -174,6 +193,9 @@ export default class UsersBiodataList extends Component {
         //   };
         // });
         //test line code end
+
+        //
+        //Debugging
         console.log(
           "\n",
           "users-biodata.js_getUsersBiodata: ",
@@ -247,6 +269,8 @@ export default class UsersBiodataList extends Component {
       deleteValue,
     } = this.state;
 
+    //
+    //Debugging
     console.log(
       "\n",
       "📺 user-list.js_render: \n",
@@ -264,6 +288,10 @@ export default class UsersBiodataList extends Component {
       searchUserBiodataTable,
       " \n\n-show:",
       show,
+      " \n\n-numberOfUsersBiodataTable:",
+      numberOfUsersBiodataTable,
+      " \n\n-deleteValue:",
+      deleteValue,
       " \n\n"
     );
     return (

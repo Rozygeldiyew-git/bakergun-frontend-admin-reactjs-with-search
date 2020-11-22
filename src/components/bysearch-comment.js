@@ -4,6 +4,8 @@ export const BySearchComment = ({
   searchUserHistoryTable,
   filteredComment,
 }) => {
+  //
+  //Debugging
   console.log(
     "\n",
     "bysearch-commnet.js_filteredComment length:::",
@@ -16,6 +18,7 @@ export const BySearchComment = ({
     searchUserHistoryTable.length,
     "\n\n"
   );
+
   if (filteredComment.length === 0) return null;
 
   const UserRow = (userhistory) => {
@@ -33,8 +36,10 @@ export const BySearchComment = ({
 
   const userTable = filteredComment.map((userhistory) => UserRow(userhistory));
 
-  console.log("\n", "bysearch-comment.js_userTable: \n\n", userTable, "\n\n");
-  console.log("\n", "bysearch-comment.js_UserRow: \n\n", UserRow, "\n\n");
+  //
+  //Debugging
+  // console.log("\n", "bysearch-comment.js_userTable: \n\n", userTable, "\n\n");
+  // console.log("\n", "bysearch-comment.js_UserRow: \n\n", UserRow, "\n\n");
 
   return (
     <div className="col-md-8 col-8 mt-4">

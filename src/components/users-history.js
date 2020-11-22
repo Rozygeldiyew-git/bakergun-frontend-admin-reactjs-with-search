@@ -50,11 +50,16 @@ export default class UsersHistoryList extends Component {
       prevState.numberOfUsersHistoryTable !==
       this.state.numberOfUsersHistoryTable
     ) {
+      //
+      //Debugging
       console.log(
-        "TEST DID Update: ",
+        "TEST USERS-HISTORY.JS CONDITIONS STATUS componentDidUpdate: ",
         true,
+        "\nValue of prevState:",
         prevState.numberOfUsersHistoryTable,
+        "\nValue of this.state:",
         this.state.numberOfUsersHistoryTable,
+        "\nValue of prevProps:",
         prevProps
       );
 
@@ -64,7 +69,12 @@ export default class UsersHistoryList extends Component {
         }
       );
     } else {
-      console.log("TEST DID Update: ", false);
+      //
+      //Debugging
+      console.log(
+        "TEST USERS-HISTORY.JS CONDITIONS STATUS componentDidUpdate: ",
+        false
+      );
     }
   }
 
@@ -75,6 +85,8 @@ export default class UsersHistoryList extends Component {
       searchUserHistoryTable: searchUserHistoryTable,
     });
 
+    //
+    //Debugging
     console.log(
       "\n",
       "users-history.js_onChangeSearchScore: ",
@@ -90,6 +102,8 @@ export default class UsersHistoryList extends Component {
       deleteValue: deleteValue,
     });
 
+    //
+    //Debugging
     console.log(
       "\n",
       "users-history.js_onChangeDeleteScore: ",
@@ -111,6 +125,8 @@ export default class UsersHistoryList extends Component {
 
     this.setState({ userHistory });
 
+    //
+    //Debugging
     console.log(
       "\n",
       "users-history.js_onChangeFormUserHistory: ",
@@ -132,6 +148,9 @@ export default class UsersHistoryList extends Component {
           };
         });
         // end test line code
+
+        //
+        //Debugging
         console.log(
           "\n",
           "users-history.js_createUserHistory: ",
@@ -170,6 +189,9 @@ export default class UsersHistoryList extends Component {
         //   };
         // });
         //test line code end
+
+        //
+        //Debuggin
         console.log(
           "\n",
           "users-history.js_getUsersHistory: ",
@@ -188,6 +210,9 @@ export default class UsersHistoryList extends Component {
         this.setState({
           filteredScore: response.data,
         });
+
+        //
+        //Debugging
         console.log(
           "\n",
           "users-history.js_searchScore_searchByScore: ",
@@ -202,6 +227,9 @@ export default class UsersHistoryList extends Component {
     UsersDataServices.searchByComment(this.state.searchUserHistoryTable)
       .then((response) => {
         this.setState({ filteredComment: response.data });
+
+        //
+        //Debugging
         console.log(
           "\n",
           "users-history.js_searchScore_searchByScore: ",
@@ -223,7 +251,6 @@ export default class UsersHistoryList extends Component {
       filteredScore,
       filteredComment,
       searchUserHistoryTable,
-
       show,
       numberOfUsersHistoryTable,
       deleteValue,
@@ -244,6 +271,10 @@ export default class UsersHistoryList extends Component {
       searchUserHistoryTable,
       " \n\n-show:",
       show,
+      " \n\n-numberOfUsersHistoryTable:",
+      numberOfUsersHistoryTable,
+      " \n\n-deleteValue:",
+      deleteValue,
       " \n\n"
     );
     return (

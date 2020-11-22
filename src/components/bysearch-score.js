@@ -1,6 +1,8 @@
 import React from "react";
 
 export const BySearchScore = ({ searchUserHistoryTable, filteredScore }) => {
+  //
+  //Debugging
   console.log(
     "\n",
     "bysearch-score.js_filteredScore length:::",
@@ -13,6 +15,7 @@ export const BySearchScore = ({ searchUserHistoryTable, filteredScore }) => {
     searchUserHistoryTable.length,
     "\n\n"
   );
+
   if (filteredScore.length === 0) return null;
 
   const UserRow = (userhistory) => {
@@ -30,8 +33,10 @@ export const BySearchScore = ({ searchUserHistoryTable, filteredScore }) => {
 
   const userTable = filteredScore.map((userhistory) => UserRow(userhistory));
 
-  console.log("\n", "bysearch-score.js_userTable: \n\n", userTable, "\n\n");
-  console.log("\n", "bysearch-score.js_UserRow: \n\n", UserRow, "\n\n");
+  //
+  //Debugging
+  // console.log("\n", "bysearch-score.js_userTable: \n\n", userTable, "\n\n");
+  // console.log("\n", "bysearch-score.js_UserRow: \n\n", UserRow, "\n\n");
 
   return (
     <div className="col-md-8 col-8 mt-4">

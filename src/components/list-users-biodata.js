@@ -9,6 +9,8 @@ export const ListUsersBiodata = ({
   onChangeDeleteFullname,
   deleteValue,
 }) => {
+  //
+  //Debugging
   console.log(
     "\n",
     "list-list-users-biodata.js_usersBiodata length:::",
@@ -17,7 +19,13 @@ export const ListUsersBiodata = ({
   );
   console.log(
     "\n",
-    "TEST LIST_USERS_BIODATA PARAMETERS 1 (usersBiodata)",
+    "TEST LIST_USERS_BIODATA PARAMETERS 1 (userBiodata)",
+    userBiodata,
+    "\n\n"
+  );
+  console.log(
+    "\n",
+    "TEST LIST_USERS_BIODATA PARAMETERS 2 (usersBiodata)",
     usersBiodata,
     "\n\n"
   );
@@ -25,6 +33,18 @@ export const ListUsersBiodata = ({
     "\n",
     "TEST LIST_USERS_BIODATA PARAMETERS 3 (onChangeFormUserBiodata)",
     onChangeFormUserBiodata,
+    "\n\n"
+  );
+  console.log(
+    "\n",
+    "TEST LIST_USERS_BIODATA PARAMETERS 4 (onChangeDeleteFullname)",
+    onChangeDeleteFullname,
+    "\n\n"
+  );
+  console.log(
+    "\n",
+    "TEST LIST_USERS_BIODATA PARAMETERS 5 (deleteValue)",
+    deleteValue,
     "\n\n"
   );
 
@@ -55,6 +75,21 @@ export const ListUsersBiodata = ({
         .catch((e) => {
           console.log(e);
         });
+
+      //
+      //Debugging
+      console.log(
+        "\n",
+        "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW PARAMETERS 1 ON updateOneUserBiodata (userbiodata.user_game_biodata_id):",
+        userbiodata.user_game_biodata_id,
+        "\n\n"
+      );
+      console.log(
+        "\n",
+        "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW PARAMETERS 2 ON updateOneUserBiodata(userBiodata):",
+        userBiodata,
+        "\n\n"
+      );
     };
 
     const deleteUserBiodata = () => {
@@ -70,24 +105,35 @@ export const ListUsersBiodata = ({
         .catch((e) => {
           console.log(e);
         });
+
+      //
+      //Debugging
+      console.log(
+        "\n",
+        "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW PARAMETERS 1 ON deleteOneUserBiodata (userbiodata.user_game_biodata_id):",
+        userbiodata.user_game_biodata_id,
+        "\n\n"
+      );
+      console.log(
+        "\n",
+        "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW PARAMETERS 2 ON deleteOneUserBiodata(deleteValue):",
+        deleteValue,
+        "\n\n"
+      );
     };
 
-    // console.log(
-    //   "\n",
-    //   "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW PARAMETERS 1 (userbiodata)",
-    //   userbiodata,
-    //   "\n\n"
-    // );
+    //
+    //Debugging
     console.log(
       "\n",
-      "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW PARAMETERS 2 (userbiodata.user_game_biodata_id):",
-      userbiodata.user_game_biodata_id,
+      "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW FUNCTION 1 (updateUserBiodata):",
+      updateUserBiodata,
       "\n\n"
     );
     console.log(
       "\n",
-      "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW PARAMETERS 2 (updateUserBiodata):",
-      updateUserBiodata,
+      "TEST LIST_USERS_BIODATA-USER_BIODATA_ROW FUNCTION 2 (deleteUserBiodata):",
+      deleteUserBiodata,
       "\n\n"
     );
 
@@ -237,13 +283,20 @@ export const ListUsersBiodata = ({
     UserBiodataRow(userbiodata)
   );
 
-  // console.log(
-  //   "\n",
-  //   "list-list-users-biodata.js_usersBiodataTable: \n\n",
-  //   usersBiodataTable,
-  //   "\n\n"
-  // );
-  // console.log("\n", "list-list-users-biodata.js_userBiodataRow: \n\n", UserBiodataRow, "\n\n");
+  //
+  //Debugging
+  console.log(
+    "\n",
+    "list-list-users-biodata.js_userBiodataRow: \n\n",
+    UserBiodataRow,
+    "\n\n"
+  );
+  console.log(
+    "\n",
+    "list-list-users-biodata.js_usersBiodataTable: \n\n",
+    usersBiodataTable,
+    "\n\n"
+  );
 
   return (
     <div className="col-md-8 col-8 mt-4">

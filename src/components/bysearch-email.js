@@ -1,6 +1,8 @@
 import React from "react";
 
 export const BySearchEmail = ({ searchUserGameTable, filteredEmail }) => {
+  //
+  //Debugging
   console.log(
     "\n",
     "user-bysearch.js_filteredEmail length:::",
@@ -13,6 +15,7 @@ export const BySearchEmail = ({ searchUserGameTable, filteredEmail }) => {
     searchUserGameTable.length,
     "\n\n"
   );
+
   if (filteredEmail.length === 0) return null;
 
   const UserRow = (user) => {
@@ -31,8 +34,10 @@ export const BySearchEmail = ({ searchUserGameTable, filteredEmail }) => {
 
   const userTable = filteredEmail.map((user) => UserRow(user));
 
-  console.log("\n", "bysearch-email.js_userTable: \n\n", userTable, "\n\n");
-  console.log("\n", "bysearch-email.js_UserRow: \n\n", UserRow, "\n\n");
+  //
+  //Debuggging
+  // console.log("\n", "bysearch-email.js_userTable: \n\n", userTable, "\n\n");
+  // console.log("\n", "bysearch-email.js_UserRow: \n\n", UserRow, "\n\n");
 
   return (
     <div className="col-md-8 col-8 mt-4">
