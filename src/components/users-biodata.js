@@ -6,6 +6,7 @@ import { BySearchJobs } from "./bysearch-jobs";
 import { ListUsersBiodata } from "./list-users-biodata";
 import CreateUserBiodata from "./create-user-biodata";
 import { MonitorUserBiodata } from "./monitor-user-biodata";
+import Fade from "react-reveal/Fade";
 
 export default class UsersBiodataList extends Component {
   constructor(props) {
@@ -320,18 +321,18 @@ export default class UsersBiodataList extends Component {
                 className="form-inline mt-4"
                 onSubmit={this.searchUserBiodataTable}
               >
-                <div className="input-group">
+                <div className="col-9 p-0 input-group">
                   <input
                     type="search"
-                    className="form-control ds-input p-2"
-                    placeholder="type your search.."
+                    className="form-control ds-input p-2 f-14"
+                    placeholder="type fullname or sex or jobs..."
                     value={searchUserBiodataTable}
                     onChange={this.onChangeSearchFullname}
                   />
                 </div>
-                <div className="input-group-append">
+                <div className="input-group-append p-0 m-0">
                   <button
-                    className="san-button-offset btn btn-success ml-4"
+                    className="san-button-offset btn btn-success ml-1"
                     type="submit"
                   >
                     Search
@@ -351,13 +352,15 @@ export default class UsersBiodataList extends Component {
               searchUserBiodataTable={searchUserBiodataTable}
               filteredJobs={filteredJobs}
             ></BySearchJobs>
-            <ListUsersBiodata
-              deleteValue={deleteValue}
-              userBiodata={userBiodata}
-              usersBiodata={usersBiodata}
-              onChangeDeleteFullname={this.onChangeDeleteFullname}
-              onChangeFormUserBiodata={this.onChangeFormUserBiodata}
-            ></ListUsersBiodata>
+            <Fade>
+              <ListUsersBiodata
+                deleteValue={deleteValue}
+                userBiodata={userBiodata}
+                usersBiodata={usersBiodata}
+                onChangeDeleteFullname={this.onChangeDeleteFullname}
+                onChangeFormUserBiodata={this.onChangeFormUserBiodata}
+              ></ListUsersBiodata>
+            </Fade>
           </div>
         </div>
       </div>

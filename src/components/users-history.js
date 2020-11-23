@@ -5,6 +5,7 @@ import { BySearchComment } from "./bysearch-comment";
 import { ListUsersHistory } from "./list-users-history";
 import CreateUserHistory from "./create-user-history";
 import { MonitorUserHistory } from "./monitor-user-history";
+import Fade from "react-reveal/Fade";
 
 export default class UsersHistoryList extends Component {
   constructor(props) {
@@ -302,18 +303,18 @@ export default class UsersHistoryList extends Component {
                 className="form-inline mt-4"
                 onSubmit={this.searchUserHistoryTable}
               >
-                <div className="input-group">
+                <div className="col-9 p-0 input-group">
                   <input
                     type="search"
                     className="form-control ds-input p-2"
-                    placeholder="type your search.."
+                    placeholder="type score or comment..."
                     value={searchUserHistoryTable}
                     onChange={this.onChangeSearchScore}
                   />
                 </div>
-                <div className="input-group-append">
+                <div className="input-group-append p-0 m-0">
                   <button
-                    className="san-button-offset btn btn-success ml-4"
+                    className="san-button-offset btn btn-success ml-1"
                     type="submit"
                   >
                     Search
@@ -329,13 +330,15 @@ export default class UsersHistoryList extends Component {
               searchUserHistoryTable={searchUserHistoryTable}
               filteredComment={filteredComment}
             ></BySearchComment>
-            <ListUsersHistory
-              deleteValue={deleteValue}
-              userHistory={userHistory}
-              usersHistory={usersHistory}
-              onChangeDeleteScore={this.onChangeDeleteScore}
-              onChangeFormUserHistory={this.onChangeFormUserHistory}
-            ></ListUsersHistory>
+            <Fade>
+              <ListUsersHistory
+                deleteValue={deleteValue}
+                userHistory={userHistory}
+                usersHistory={usersHistory}
+                onChangeDeleteScore={this.onChangeDeleteScore}
+                onChangeFormUserHistory={this.onChangeFormUserHistory}
+              ></ListUsersHistory>
+            </Fade>
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { BySearchEmail } from "./bysearch-email";
 import { ListUsersGame } from "./list-users-game";
 import CreateUserGame from "./create-user-game";
 import { MonitorUserGame } from "./monitor-user-game";
+import Fade from "react-reveal/Fade";
 
 export default class UsersList extends Component {
   constructor(props) {
@@ -290,18 +291,18 @@ export default class UsersList extends Component {
                 className="form-inline mt-4"
                 onSubmit={this.searchUserGameTable}
               >
-                <div className="input-group">
+                <div className="col-9 p-0 input-group">
                   <input
                     type="search"
                     className="form-control ds-input p-2"
-                    placeholder="type your search.."
+                    placeholder="type email or username..."
                     value={searchUserGameTable}
                     onChange={this.onChangeSearchUsername}
                   />
                 </div>
-                <div className="input-group-append">
+                <div className="input-group-append p-0 m-0">
                   <button
-                    className="san-button-offset btn btn-success ml-4"
+                    className="san-button-offset btn btn-success ml-1"
                     type="submit"
                   >
                     Search
@@ -317,13 +318,15 @@ export default class UsersList extends Component {
               searchUserGameTable={searchUserGameTable}
               filteredEmail={filteredEmail}
             ></BySearchEmail>
-            <ListUsersGame
-              deleteValue={deleteValue}
-              userGame={userGame}
-              usersGame={usersGame}
-              onChangeDeleteUsername={this.onChangeDeleteUsername}
-              onChangeFormUserGame={this.onChangeFormUserGame}
-            ></ListUsersGame>
+            <Fade>
+              <ListUsersGame
+                deleteValue={deleteValue}
+                userGame={userGame}
+                usersGame={usersGame}
+                onChangeDeleteUsername={this.onChangeDeleteUsername}
+                onChangeFormUserGame={this.onChangeFormUserGame}
+              ></ListUsersGame>
+            </Fade>
           </div>
         </div>
       </div>
