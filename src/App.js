@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./assets/scss/style.scss";
-import "./App.css";
 import UsersList from "./components/users-game";
 
 import { Route, Switch } from "react-router-dom";
