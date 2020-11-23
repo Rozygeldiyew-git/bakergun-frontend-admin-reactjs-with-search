@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import LogoBakergun from "../assets/icons/logo-bakergun-admin.png";
 
 export default class NavbarTop extends Component {
   render() {
@@ -10,7 +9,6 @@ export default class NavbarTop extends Component {
           <div className=" container-xl container-md container-sm">
             <div className="h5 text-white font-weight-bolder navbar-brand">
               <a href="/" className="anchor-home-change-bletter">
-                {/* <img src={LogoBakergun} alt="icon" width="40" /> */}
                 <div className="home-bletter-container">
                   <div className=" bletter-container">
                     <svg
