@@ -12,7 +12,7 @@ export const MonitorUserHistory = ({ numberOfUsersHistoryTable }) => {
       }}
     >
       <div className="card-body display-board">
-        <h4>Users Created:</h4>
+        <h4>Histories Created:</h4>
         <div
           className="number"
           style={{ fontSize: "58px", fontWeight: "bold" }}

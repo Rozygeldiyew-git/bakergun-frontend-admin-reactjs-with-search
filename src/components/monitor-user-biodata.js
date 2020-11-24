@@ -12,7 +12,7 @@ export const MonitorUserBiodata = ({ numberOfUsersBiodataTable }) => {
       }}
     >
       <div className="card-body display-board">
-        <h4>Users Created:</h4>
+        <h4>Biodatas Created:</h4>
         <div
           className="number"
           style={{ fontSize: "58px", fontWeight: "bold" }}
